@@ -51,8 +51,9 @@ From scratch (requires the external systems and, for new device data, IBM Quantu
 1. Tests: `python tools/test_engine.py`, `tools/test_planner.py`, `tools/test_join_stat.py`, `tools/test_tau_cert.py`,
    and `tools/test_systems.py` (the last one needs the instances and shots of steps 2 and 3).
 2. Instances: `python bench/build_pilot.py` for the pilot instances; `python bench/e1_probe.py` and then
-   `python bench/e1_build.py` for the planner-study workload; `python bench/m1_probe.py` and then
-   `python bench/m1_build.py` for the main workload. The probes search cut schemes and write the candidate lists that the
+   `python bench/e1_build.py` for the planner-study workload; for the main workload
+   `python bench/m1_probe.py` (MQT Bench families), `python bench/m1_probe.py adder,supremacy_d4,supremacy,hwea,bv,aqft,regular,hetero`
+   (CutQC families) and then `python bench/m1_build.py`. The probes search cut schemes and write the candidate lists that the
    build scripts read; the build scripts write the instances under the data root. The frozen manifests are
    `bench/*MANIFEST.json`.
 3. Shots: `python bench/e1_shots.py --exp e1` and `--exp m1` (ideal shots by state vector or MPS; noisy shots from the
