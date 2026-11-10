@@ -8,7 +8,7 @@ execution), so its wall time is the end-to-end time Γ. A system that cannot run
 
 ctx: dict with keys circ, sch, models, tabs, S, A (sorted list), sel (dict qubit -> bit or None), c, n, cost_model.
 Memory rule (same for every system, KNITPLAN included): no single dense array above DENSE_ENTRIES float64 entries;
-sparse operators whose aggregated output exceeds engine.OUT_CAP entries are DNF (product rows stream in chunks).
+sparse operators above engine.ROW_CAP rows are DNF.
 """
 import json, math, sys, time
 from pathlib import Path
@@ -62,7 +62,8 @@ def knitplan(ctx):
     fs = {m.p: E.build_factor(m, ctx["tabs"][m.p], ctx["S"], A=set(ctx["A"]), sel=ctx["sel"], position="before")
           for m in ctx["models"]}
     plan, _, _, _ = P.choose_v2(fs, ctx["models"], ctx["cost_model"])
-    return P.fold_tree(plan, fs, ctx["c"], A_sorted=ctx["A"])
+    o, i, v = P.fold_tree(plan, fs, ctx["c"])
+    return E.canonical(o, i, v, ctx["A"])
 
 
 def default_rule(ctx):
@@ -73,8 +74,8 @@ def default_rule(ctx):
     fs = {m.p: E.build_factor(m, ctx["tabs"][m.p], ctx["S"], A=set(ctx["A"]), sel=ctx["sel"], position="before")
           for m in ctx["models"]}
     dplan = E.default_rule_from_factors(fs)
-    return P.fold_tree(P.TreePlan(dplan.position, P.left_deep(dplan.order), dplan.fmts, dplan.gran), fs, ctx["c"],
-                       A_sorted=ctx["A"])
+    o, i, v = P.fold_tree(P.TreePlan(dplan.position, P.left_deep(dplan.order), dplan.fmts, dplan.gran), fs, ctx["c"])
+    return E.canonical(o, i, v, ctx["A"])
 
 
 # ------------------------------------------------------------------------------------------------ dense tensor networks

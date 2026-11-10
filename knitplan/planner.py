@@ -126,27 +126,7 @@ def left_deep(order):
 
 
 # ----------------------------------------------------------------------------------------------- execution
-def fold_tree(plan: TreePlan, factors, c, A_sorted=None):
-    """Execute a tree plan. With A_sorted, return the canonical answer (idx, val) directly; a dense final factor is
-    re-ordered by an axis transpose (E.canonical_dense) instead of a per-entry bit permutation."""
-    if A_sorted is not None:
-        outs, h = _fold_tree_factor(plan, factors)
-        if h.fmt == "D":
-            i, v = E.canonical_dense(outs, h.data, list(A_sorted))
-            return i, v * (2.0 ** -c)
-        idx, val = h.data[()]
-        return E.canonical(outs, idx, val * (2.0 ** -c), list(A_sorted))
-    outs, h = _fold_tree_factor(plan, factors)
-    if h.fmt == "D":
-        arr = h.data.reshape(-1)
-        i = np.flatnonzero(arr)
-        idx, val = i.astype(np.int64), arr[i]
-    else:
-        idx, val = h.data[()]
-    return h.outs, idx, val * (2.0 ** -c)
-
-
-def _fold_tree_factor(plan: TreePlan, factors):
+def fold_tree(plan: TreePlan, factors, c):
     all_vars = {p: set(factors[p].vars) for p in factors}
     fmt_list = list(plan.fmts)
 
@@ -171,7 +151,13 @@ def _fold_tree_factor(plan: TreePlan, factors):
     h = ev(plan.tree, [0])
     for v in list(h.vars):
         h = E.sum_out(h, v, h.fmt)
-    return h.outs, h
+    if h.fmt == "D":
+        arr = h.data.reshape(-1)
+        i = np.flatnonzero(arr)
+        idx, val = i.astype(np.int64), arr[i]
+    else:
+        idx, val = h.data[()]
+    return h.outs, idx, val * (2.0 ** -c)
 
 
 # ----------------------------------------------------------------------------------------------- statistics
@@ -454,8 +440,7 @@ def plan_features(plan: TreePlan, leaf_stats, cache=None, join=None):
         st, rows, pairs = cache[ck]
         for f, x in node_features(a, b, elim, fmt, (fa, fb), rows, pairs, plan.gran).items():
             tot[f] += x
-        # memory peaks of this node (engine caps: DENSE_CAP entries per dense array, OUT_CAP aggregated entries per
-        # sparse op; product rows stream in chunks and cost only time);
+        # memory peaks of this node (engine caps: DENSE_CAP entries per dense array, ROW_CAP products per sparse op);
         # keys start with "_" so the cost model ignores them
         if fmt == "D":
             dsz = lambda s: (4 ** len(s.vars)) * (2 ** s.nouts)
@@ -464,7 +449,6 @@ def plan_features(plan: TreePlan, leaf_stats, cache=None, join=None):
             tot["_peak_dense"] = max(tot.get("_peak_dense", 0), peak)
         else:
             tot["_peak_rows"] = max(tot.get("_peak_rows", 0), rows)
-            tot["_peak_out"] = max(tot.get("_peak_out", 0), st.nnz())
         return st, fmt
 
     ev(plan.tree)
@@ -473,7 +457,7 @@ def plan_features(plan: TreePlan, leaf_stats, cache=None, join=None):
 
 def feasible(feats):
     """A plan is feasible if no node exceeds the engine's memory caps (predicted from the same statistics)."""
-    return feats.get("_peak_dense", 0) <= E.DENSE_CAP and feats.get("_peak_out", 0) <= E.OUT_CAP
+    return feats.get("_peak_dense", 0) <= E.DENSE_CAP and feats.get("_peak_rows", 0) <= E.ROW_CAP
 
 
 def choose(fs, model: CostModel, positions=("before",), grans=("joint", "seq")):

@@ -9,7 +9,7 @@ E:/Project-git/CPU_LOCK.txt, worker pinned to one P-core (M1_CORE, default 4), e
                 External systems (Galley, QCut) do their warm-up and REPS runs inside their runner; their time is
                 t_stat (median of REPS builds after a warm-up, in this process) + median t_conv + median t_exec.
                 A run longer than CAP s or a worker above MEM_CAP bytes is killed -> DNF with the time / memory at stop.
-                A system's own memory rule (bench/systems.py: no array > 2^30 entries; sparse operator output > OUT_CAP entries;
+                A system's own memory rule (bench/systems.py: no array > 2^30 entries; sparse operator > ROW_CAP rows;
                 CutQC entry vectors > 48 GiB) -> DNF "infeasible" with the reason, at zero cost.
                 Every answer is V-checked against KNITPLAN's answer of the same query within the certified tau_eq
                 (KNITPLAN's own answer is checked against every finished baseline the same way).
@@ -33,7 +33,7 @@ RUNS = Path("D:/runs/knitplan/m1")
 # M1_PILOT=1: untimed sizing pass (not evidence; no lock, E-core): warm-up + 1 run, CAP 600 s, noisy S = 10^4 cells
 # only, output D:/runs/knitplan/m1/pilot/ -- used only to size the lock booking and to catch harness errors early
 PILOT = os.environ.get("M1_PILOT") == "1"
-QDIR, TDIR = RUNS / "queries", RUNS / (os.environ.get("M1_TDIR") or ("pilot" if PILOT else "T"))
+QDIR, TDIR = RUNS / "queries", RUNS / ("pilot" if PILOT else "T")
 CM = ROOT / "derisk" / "results" / "E1" / "cost_model.json"   # calibrated on the E1 development run, not refit
 CAP, REPS = (float(os.environ.get("M1_PILOT_CAP", "600")), 1) if PILOT else (3600.0, 5)
 MEM_CAP_FULL = 60 * 2 ** 30

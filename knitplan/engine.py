@@ -32,10 +32,8 @@ class MemoryCap(Exception):
     pass
 
 
-ROW_CAP = 60_000_000      # legacy (E1 / pilot): max product rows of one sparse operator; superseded by streaming
-ROW_CHUNK = 8_000_000     # product rows generated per chunk of the streaming sparse join-aggregate
-OUT_CAP = 200_000_000     # max aggregated entries of one sparse intermediate (3.2 GB of int64 keys + float64 values)
-DENSE_CAP = 2 ** 30       # max entries of one dense intermediate (8 GiB of float64; the per-array rule every M1 system has, bench/systems.py DENSE_ENTRIES; E1 used 2 ** 28)
+ROW_CAP = 60_000_000      # max rows materialized by one sparse operator (pilot DNF cap)
+DENSE_CAP = 2 ** 28       # max entries of one dense intermediate (2 GiB of float64)
 
 
 # ----------------------------------------------------------------------------------------------- bit helpers
@@ -304,22 +302,13 @@ def product_sum(f: Factor, g: Factor, elim, fmt):
     gb = {}
     for kg in g.data:
         gb.setdefault(tuple(kg[gpos[v]] for v in shared), []).append(kg)
-    # Streaming join-aggregate: products are generated in chunks of at most ROW_CHUNK rows and folded into the running
-    # per-key aggregate, so memory is bounded by the output size plus one chunk (the number of product rows only
-    # costs time). The only memory rule left is on the aggregated output (OUT_CAP entries).
-    acc, pend, pend_rows = {}, {}, [0]
-
-    def flush():
-        tot = 0
-        for rk, parts in pend.items():
-            if rk in acc:
-                parts = parts + [acc[rk]]
-            acc[rk] = aggregate(np.concatenate([p[0] for p in parts]), np.concatenate([p[1] for p in parts]))
-        pend.clear(); pend_rows[0] = 0
-        tot = sum(int(a[0].size) for a in acc.values())
-        if tot > OUT_CAP:
-            raise MemoryCap(f"sparse output {tot}")
-
+    rows = 0
+    for kf, (fi, _) in f.data.items():
+        for kg in gb.get(tuple(kf[fpos[v]] for v in shared), []):
+            rows += fi.size * g.data[kg][0].size
+    if rows > ROW_CAP:
+        raise MemoryCap(f"sparse rows {rows}")
+    acc = {}
     for kf, (fi, fv) in f.data.items():
         if fi.size == 0:
             continue
@@ -330,19 +319,16 @@ def product_sum(f: Factor, g: Factor, elim, fmt):
             assign = {v: kf[fpos[v]] for v in f.vars}
             assign.update({v: kg[gpos[v]] for v in g.vars})
             rk = tuple(assign[v] for v in rvars)
-            step = max(1, ROW_CHUNK // max(fi.size, 1))
-            for s0 in range(0, gi.size, step):
-                gs, gvs = gi[s0:s0 + step], gv[s0:s0 + step]
-                idx = ((gs[:, None] << nf) | fi[None, :]).ravel()
-                val = (gvs[:, None] * fv[None, :]).ravel()
-                pend.setdefault(rk, []).append((idx, val))
-                pend_rows[0] += idx.size
-                if pend_rows[0] >= ROW_CHUNK:
-                    flush()
-    flush()
+            idx = ((gi[:, None] << nf) | fi[None, :]).ravel()
+            val = (gv[:, None] * fv[None, :]).ravel()
+            acc.setdefault(rk, []).append((idx, val))
     data = {}
     for rk in itertools.product(range(4), repeat=len(rvars)):
-        data[rk] = acc.get(rk, (np.zeros(0, np.int64), np.zeros(0)))
+        parts = acc.get(rk, [])
+        if parts:
+            data[rk] = aggregate(np.concatenate([p[0] for p in parts]), np.concatenate([p[1] for p in parts]))
+        else:
+            data[rk] = (np.zeros(0, np.int64), np.zeros(0))
     return Factor(rvars, f.outs + g.outs, "S", data)
 
 
@@ -448,23 +434,6 @@ def canonical(outs, idx, val, A_sorted):
             return aggregate(g, v)
         return g[nz], v[nz]
     return aggregate(gather_bits(idx, pos), val)
-
-
-def canonical_dense(outs, arr, A_sorted):
-    """canonical() for a dense answer: the bit permutation (and the sum over output bits outside A) is an axis
-    transpose / reduction of the (2,)*n array, with no per-entry bit arithmetic or sort. Same result as
-    canonical(outs, flatnonzero(arr), arr[nz], A_sorted)."""
-    n = len(outs)
-    a = arr.reshape((2,) * n) if n else arr.reshape(())
-    drop = tuple(n - 1 - outs.index(q) for q in outs if q not in A_sorted)
-    if drop:
-        a = a.sum(axis=drop)
-    kept = [q for q in reversed(outs) if q in A_sorted]          # remaining axes, axis 0 = most significant bit
-    m = len(A_sorted)
-    perm = [kept.index(A_sorted[m - 1 - j]) for j in range(m)]
-    flat = np.ascontiguousarray(np.transpose(a, perm)).reshape(-1) if m else a.reshape(-1)
-    i = np.flatnonzero(flat)
-    return i.astype(np.int64), flat[i]
 
 
 U64 = 2.0 ** -53
