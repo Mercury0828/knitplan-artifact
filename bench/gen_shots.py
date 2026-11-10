@@ -5,6 +5,7 @@ Manifest D:/runs/knitplan/shots/manifest.jsonl: one JSON line per finished unit 
 Seeds are a function of the unit id, so a resumed sweep produces the same files as a clean one.
 Usage: python bench/gen_shots.py [--only inst1,inst2] [--noise ideal|noisy|all] [--root DIR]
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import argparse, hashlib, json, pickle, sys, time
 from pathlib import Path
 
@@ -42,7 +43,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
     ap.add_argument("--noise", default="all")
-    ap.add_argument("--root", default="D:/runs/knitplan/shots")
+    ap.add_argument("--root", default=_RUNS + "/shots")
     a = ap.parse_args()
     out_root = Path(a.root); out_root.mkdir(parents=True, exist_ok=True)
     man_path = out_root / "manifest.jsonl"
@@ -57,7 +58,7 @@ def main():
     for inst in man["instances"]:
         if inst["status"] != "ok" or (only and inst["id"] not in only):
             continue
-        d = pickle.load(open(f"D:/runs/knitplan/pilot/{inst['id']}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/pilot/{inst['id']}.pkl", "rb"))
         subs = subcircuits(d["circ"], d["scheme"])
         for noise in inst["noise"]:
             if a.noise != "all" and noise != a.noise:

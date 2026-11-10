@@ -452,8 +452,7 @@ def round_up(x):
 
 
 def tau_eq_details(models, tables_by_sub, S, A, sel, c, u=U64, exact_beta_max_c=9):
-    """Certified-tolerance ingredients (T0 R1 item (f); implementation audited and corrected in T0 R2,
-    rounds/T0-semantics_round2_response.md).
+    """Certified-tolerance ingredients (the analysis item (f).
 
     B = min{6^c prod_j M_j, 2^-c prod_j lambda_j, 2^-c sum_beta prod_j C_j(beta)} (M_j = max_kappa selected counts of
     kappa / S; the Phase-0 draft used 6^c, valid only for tables normalised per configuration) bounds sum_z H(z), H(z) = the absolute sum of the
@@ -463,8 +462,7 @@ def tau_eq_details(models, tables_by_sub, S, A, sel, c, u=U64, exact_beta_max_c=
     raw terms of one entry (coefficients +-1, +-2 and signs are exact). Fold steps add D_f + D_g + 4^|elim| (one product
     rounding, <= 4^|elim| - 1 additions in any summation tree, also for the 'seq' granularity); the final leftover
     sum-out adds <= 4^c - 1; the 2^-c scaling is exact. Every cut is eliminated once and there are r - 1 binary nodes,
-    so every plan of the family (left-deep or bushy, joint or seq) has D_P <= D_max = sum_j D_j + (r - 1) + (4^c - 1)
-    (T0 R2). Arithmetic contract: binary64 round-to-nearest; counts and S convert exactly; every relevant inexact
+    so every plan of the family (left-deep or bushy, joint or seq) has D_P <= D_max = sum_j D_j + (r - 1) + (4^c - 1). Arithmetic contract: binary64 round-to-nearest; counts and S convert exactly; every relevant inexact
     operation satisfies the relative-error model; coefficient multiplications and final power-of-two scaling are exact.
     Absence of harmful overflow/underflow is a separate assumption, not a consequence of a lower bound S**(-r).
     """
@@ -481,7 +479,7 @@ def tau_eq_details(models, tables_by_sub, S, A, sel, c, u=U64, exact_beta_max_c=
             msk = np.ones(idx.size, bool)
             for q in selq:
                 msk &= ((idx >> m.out_local[outq.index(q)]) & 1) == sel[q]
-            mass[conf] = Fraction(sum(map(int, cnt[msk])), S)  # Python ints: no silent int64 overflow (T0 R2)
+            mass[conf] = Fraction(sum(map(int, cnt[msk])), S)  # Python ints: no silent int64 overflow
             if msk.any():
                 _, mult = np.unique(gather_bits(idx[msk], keep_pos), return_counts=True)
                 L += int(mult.max())
@@ -532,7 +530,7 @@ def tau_eq_details(models, tables_by_sub, S, A, sel, c, u=U64, exact_beta_max_c=
 
 
 def tau_eq(models, tables_by_sub, S, A, sel, c, D_other=None, D_other_extra=0, u=U64):
-    """Certified equivalence tolerance (replaces the unconditional 1e-12 * W, which T0 R1 refuted):
+    """Certified equivalence tolerance (replaces the unconditional 1e-12 * W, which is not a bound):
     tau = roundUp((gamma_{D_max} + gamma_{D_other}) * B); D_other = rounding budget of the other implementation compared
     (default: another plan of the same family, D_max; D_other_extra adds to D_max, e.g. a brute-force reference that sums
     2^(n-|A|-|B|) full-distribution entries per answer key). Returns (tau, B)."""
@@ -544,7 +542,7 @@ def tau_eq(models, tables_by_sub, S, A, sel, c, D_other=None, D_other_extra=0, u
 
 def tau_eq_legacy(models, tables_by_sub, S, A, sel, c, rel=1e-12):
     """Phase-0 tolerance (kept for comparison only): tau_eq = rel * W, W = 2^-c sum_beta prod_j sum_z |phi_j(beta, z)|.
-    NOT certified (T0 R1 (f) counterexample)."""
+    NOT certified (the analysis (f) counterexample)."""
     fs = [build_factor(m, tables_by_sub[m.p], S, A=A, sel=sel, position="after") for m in models]
     allv = sorted(set(v for f in fs for v in f.vars))
     L = {v: LET[i] for i, v in enumerate(allv)}
@@ -577,7 +575,7 @@ def predicted_support(f: Factor, g: Factor, elim):
 
 
 def _consistent_groups(f: Factor, g: Factor, elim):
-    """Result key -> list of (f key, g key) pairs that join on every common cut index (T0 R1 (e): join on all common
+    """Result key -> list of (f key, g key) pairs that join on every common cut index (the analysis (e): join on all common
     coordinates, then project the eliminated ones away)."""
     fpos = {v: i for i, v in enumerate(f.vars)}; gpos = {v: i for i, v in enumerate(g.vars)}
     shared = [v for v in f.vars if v in g.vars]
@@ -593,7 +591,7 @@ def _consistent_groups(f: Factor, g: Factor, elim):
 
 
 def exact_support_nc(f: Factor, g: Factor, elim):
-    """Exact support of sum_elim f*g under no-cancellation (T0 R1 (e)): sum over result keys of |U_t x V_t union|,
+    """Exact support of sum_elim f*g under no-cancellation: sum over result keys of |U_t x V_t union|,
     computed without enumerating products: group each u by its signature {t : u in U_t}; then
     |union_t U_t x V_t| = sum_signatures (#u with that signature) * |union_{t in signature} V_t|. f, g sparse."""
     total = 0

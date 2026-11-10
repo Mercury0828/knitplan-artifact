@@ -2,6 +2,7 @@
 For every E1 T instance (ideal, S = 1e3 and 1e4, two queries): every internal node of every tree, exact (leaf-leaf),
 estimated and generic statistics compared (support per key, rows, pairs); and planner v1 / v1-generic choices with the
 fast vs reference statistics. Prints counts; asserts zero mismatches."""
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys, time
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,9 +26,9 @@ def main():
     for idx, inst in enumerate(man["instances"]):
         if inst["stratum"] != "T":
             continue
-        d = pickle.load(open(f"D:/runs/knitplan/e1/inst/{inst['id']}.pkl", "rb")); sch = d["scheme"]; models = E.sub_models(sch)
+        d = pickle.load(open(f"{_RUNS}/e1/inst/{inst['id']}.pkl", "rb")); sch = d["scheme"]; models = E.sub_models(sch)
         for S in (1000, 10000):
-            tabs = {p: load_tables(f"D:/runs/knitplan/e1/shots/{inst['id']}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+            tabs = {p: load_tables(f"{_RUNS}/e1/shots/{inst['id']}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
             for qname, (A, sel) in list(queries(sch.n, idx).items())[:2]:
                 fs = {m.p: E.build_factor(m, tabs[m.p], S, A=set(A), sel=sel, position="before") for m in models}
                 for kind, mk in (("exact", P.leaf_stat), ("generic", P.generic_leaf_stat)):

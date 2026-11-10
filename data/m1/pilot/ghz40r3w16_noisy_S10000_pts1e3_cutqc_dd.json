@@ -1,0 +1,13 @@
+{
+ "dnf": "infeasible: CutQC DD answers bin queries, not point batches",
+ "dnf_kind": "memory rule",
+ "peak_rss_sampled": 0,
+ "unit_wall": 0.0019203000119887292,
+ "cell": "ghz40r3w16_noisy_S10000",
+ "query": "pts1e3",
+ "system": "cutqc_dd",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "core": 30,
+ "finished": "2026-11-09T20:31:36"
+}

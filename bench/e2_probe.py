@@ -4,6 +4,7 @@ width <= 24, Aer matrix_product_state above). Same procedure and feasibility rul
 <= 1024 configurations per subcircuit). Output: D:/runs/knitplan/e2/probe.jsonl, D:/runs/knitplan/e2/inst/<id>.pkl.
 Usage: python bench/e2_probe.py [families comma-separated]
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 os.environ.setdefault("OMP_NUM_THREADS", "1")
 import json, pickle, sys, time
@@ -14,7 +15,7 @@ import e1_probe as P1
 from knitplan.cutting import find_scheme, subcircuits
 from knitplan.shots import configurations
 
-OUT = Path("D:/runs/knitplan/e2"); (OUT / "inst").mkdir(parents=True, exist_ok=True)
+OUT = Path(_RUNS + "/e2"); (OUT / "inst").mkdir(parents=True, exist_ok=True)
 FAMILIES = ["adder", "supremacy_d4", "hwea", "hetero", "bv"]
 SHAPES = [(60, 3, 24), (63, 3, 24), (72, 3, 28), (81, 3, 30), (80, 4, 24), (90, 4, 26), (100, 4, 28), (100, 5, 24)]
 CASE_ORDER = [f"{fam}{n}r{r}w{W}" for fam in FAMILIES for n, r, W in SHAPES]

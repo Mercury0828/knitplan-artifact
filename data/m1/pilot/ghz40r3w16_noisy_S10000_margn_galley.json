@@ -1,0 +1,13 @@
+{
+ "dnf": "infeasible: out of memory: ude(mod::Module, _path::String)\n    @ Base .\\Base.jl:309\n [15] exec_options(opts::Base.JLOptions)\n    @ Base .\\client.jl:344\n [16] _start()\n    @ Base .\\client.jl:577\nin expression starting at E:\\Project-git\\IEEE International Conference on Data Engineering (ICDE)\\knitplan\\bench\\galley_runner.jl:42\n",
+ "dnf_kind": "memory rule",
+ "peak_rss_sampled": 96301056,
+ "unit_wall": 622.0136453000014,
+ "cell": "ghz40r3w16_noisy_S10000",
+ "query": "margn",
+ "system": "galley",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "core": 30,
+ "finished": "2026-11-09T20:26:25"
+}

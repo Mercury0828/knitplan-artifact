@@ -3,6 +3,7 @@ For configurations of the narrowest pilot noisy subcircuits (width <= 10): exact
 density_matrix with the archived ibm_cleveland noise model, same transpilation) vs the average of K Monte-Carlo
 trajectories (K in {64, 256, 1024}); reported: total variation distance (TVD), and the TVD expected from finite
 sampling alone at S = 10^4 shots (for scale). Output derisk/results/E1/N.json."""
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys, time
 from pathlib import Path
 import numpy as np
@@ -24,7 +25,7 @@ def main():
         backend = None
     out = []
     for iid in ("adder20r3", "bv20r3"):
-        d = pickle.load(open(f"D:/runs/knitplan/pilot/{iid}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/pilot/{iid}.pkl", "rb"))
         sch = d["scheme"]; subs = subcircuits(d["circ"], sch)
         p = min(range(sch.r), key=lambda q: sch.widths()[q])
         ins, outs, confs = configurations(sch, p)

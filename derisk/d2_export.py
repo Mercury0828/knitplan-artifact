@@ -5,6 +5,7 @@ Forms: 'merged' = psi_j(beta..., z_j, r_j[, sel_j]) per subcircuit; 'raw' = N_j(
 r_j[, sel_j]) counts/S plus per-cut-end coefficient tensors (Cin[b, state], Cout[b, meas, s]).
 A selection is expressed with a one-hot vector over the packed selected bits of each subcircuit.
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import itertools, json, pickle, statistics, sys, time
 from pathlib import Path
 
@@ -15,7 +16,7 @@ sys.path.insert(0, str(ROOT))
 from knitplan import engine as E
 from knitplan.shots import load_tables, INIT, MEAS
 
-OUT = Path("D:/runs/knitplan/d2"); OUT.mkdir(parents=True, exist_ok=True)
+OUT = Path(_RUNS + "/d2"); OUT.mkdir(parents=True, exist_ok=True)
 CIN = np.array([[1, 1, 0, 0], [-1, -1, 2, 0], [-1, -1, 0, 2], [1, -1, 0, 0]], float)      # [beta, state]
 COUT = np.zeros((4, 3, 2)); COUT[0, 0] = [1, 1]; COUT[1, 1] = [1, -1]; COUT[2, 2] = [1, -1]; COUT[3, 0] = [1, -1]
 
@@ -27,9 +28,9 @@ def split(y, outq, A, selq):
 
 
 def export(iid, S, qname, A, sel, form):
-    d = pickle.load(open(f"D:/runs/knitplan/pilot/{iid}.pkl", "rb"))
+    d = pickle.load(open(f"{_RUNS}/pilot/{iid}.pkl", "rb"))
     sch = d["scheme"]; models = E.sub_models(sch)
-    tabs = {p: load_tables(f"D:/runs/knitplan/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+    tabs = {p: load_tables(f"{_RUNS}/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
     sel = sel or {}
     arrays, tensors, outputs = {}, [], []
     for m in models:
@@ -108,7 +109,7 @@ def main():
     cases = []
     S = 10000
     for iid in ["adder20", "qaoa20a", "sup20a"]:
-        d = pickle.load(open(f"D:/runs/knitplan/pilot/{iid}.pkl", "rb")); n = d["scheme"].n
+        d = pickle.load(open(f"{_RUNS}/pilot/{iid}.pkl", "rb")); n = d["scheme"].n
         rng = np.random.default_rng(42)
         A10 = sorted(rng.choice(n, size=10, replace=False).tolist())
         for qname, A, sel in [("marg10", A10, None), ("full", list(range(n)), None)]:
@@ -119,7 +120,7 @@ def main():
             (OUT / f"{iid}_S{S}_{qname}_knitplan.json").write_text(json.dumps(kt, indent=1))
             print(iid, qname, "knitplan best", kt["best_plan"], f"{kt['best_time']:.4f}s default {kt['default_rule_time']:.4f}s", flush=True)
     # expressibility tests on qaoa20a: group-by with selection, point lookup, DD bin query
-    d = pickle.load(open("D:/runs/knitplan/pilot/qaoa20a.pkl", "rb")); n = d["scheme"].n
+    d = pickle.load(open(_RUNS + "/pilot/qaoa20a.pkl", "rb")); n = d["scheme"].n
     rng = np.random.default_rng(7)
     Ag = sorted(rng.choice(n, size=6, replace=False).tolist()); rest = [q for q in range(n) if q not in Ag]
     sel = {int(q): int(rng.integers(2)) for q in rng.choice(rest, size=4, replace=False)}

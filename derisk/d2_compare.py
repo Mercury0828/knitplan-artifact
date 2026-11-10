@@ -1,4 +1,5 @@
 """D2 — compare Galley's answers and times with KNITPLAN's (reads D:/runs/knitplan/d2). Writes derisk/results/D2.json."""
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys
 from pathlib import Path
 
@@ -9,12 +10,12 @@ sys.path.insert(0, str(ROOT))
 from knitplan import engine as E
 from knitplan.shots import load_tables
 
-D = Path("D:/runs/knitplan/d2")
+D = Path(_RUNS + "/d2")
 
 
 def knit_answer(iid, S, A, sel):
-    d = pickle.load(open(f"D:/runs/knitplan/pilot/{iid}.pkl", "rb")); sch = d["scheme"]; models = E.sub_models(sch)
-    tabs = {p: load_tables(f"D:/runs/knitplan/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+    d = pickle.load(open(f"{_RUNS}/pilot/{iid}.pkl", "rb")); sch = d["scheme"]; models = E.sub_models(sch)
+    tabs = {p: load_tables(f"{_RUNS}/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
     o, i, v = E.execute(E.Plan("before", (0, 1), ("D",), "joint"), models, tabs, S, set(A), sel, sch.c)
     if A:
         i, v = E.canonical(o, i, v, A)

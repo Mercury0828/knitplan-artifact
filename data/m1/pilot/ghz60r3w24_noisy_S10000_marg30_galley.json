@@ -1,0 +1,14 @@
+{
+ "dnf": "error: RuntimeError('external run failed (rc 1): ERROR: LoadError: InexactError: trunc(UInt32, 6765412584)\\nStacktrace:\\n  [1] throw_inexacterror(func::Symbol, to::Type, val::Int64)\\n    @ Core .\\\\boot.jl:868\\n  [2] checked_trunc_uint\\n    @ .\\\\boot.jl:890 [inlined]\\n  [3] toUInt32\\n    @ .\\\\boot.jl",
+ "dnf_kind": "error",
+ "traceback": " on Data Engineering (ICDE)\\knitplan\\bench\\systems.py\", line 436, in _run_ext\n    raise RuntimeError(f\"external run failed (rc {p.returncode}): {err}\")\nRuntimeError: external run failed (rc 1): ERROR: LoadError: InexactError: trunc(UInt32, 6765412584)\nStacktrace:\n  [1] throw_inexacterror(func::Symbol, to::Type, val::Int64)\n    @ Core .\\boot.jl:868\n  [2] checked_trunc_uint\n    @ .\\boot.jl:890 [inlined]\n  [3] toUInt32\n    @ .\\boot.jl:974 [inlined]\n  [4] UInt32(x::Int64)\n    @ Core .\\boot.jl:1014\n  [5] addfile(w::ZipFile.Writer, name::String; method::UInt16, mtime::Float64)\n    @ ZipFile D:\\_caches\\julia\\packages\\ZipFile\\yQ7yx\\src\\ZipFile.jl:617\n  [6] addfile\n    @ D:\\_caches\\julia\\packages\\ZipFile\\yQ7yx\\src\\ZipFile.jl:607 [inlined]\n  [7] npzwrite(filename::String, vars::Dict{String, Any})\n    @ NPZ D:\\_caches\\julia\\packages\\NPZ\\UCofn\\src\\NPZ.jl:436\n  [8] top-level scope\n    @ E:\\Project-git\\IEEE International Conference on Data Engineering (ICDE)\\knitplan\\bench\\galley_runner.jl:66\n  [9] include(mod::Module, _path::String)\n    @ Base .\\Base.jl:309\n [10] exec_options(opts::Base.JLOptions)\n    @ Base .\\client.jl:344\n [11] _start()\n    @ Base .\\client.jl:577\nin expression starting at E:\\Project-git\\IEEE International Conference on Data Engineering (ICDE)\\knitplan\\bench\\galley_runner.jl:66\nerror in running finalizer: Core.InexactError(func=:trunc, args=(Core.UInt32, 6765412584)) ... c:199\njlplt_ijl_exit_49138.1 at D:\\_caches\\julia-bin\\julia-1.13.3\\lib\\julia\\sys.dll (unknown line)\nexit at .\\initdefs.jl:28\nexec_options at .\\client.jl:349\n_start at .\\client.jl:577\njfptr__start_75985.1 at D:\\_caches\\julia-bin\\julia-1.13.3\\lib\\julia\\sys.dll (unknown line)\njl_apply at C:/workdir/src\\julia.h:2319 [inlined]\ntrue_main at C:/workdir/src\\jlapi.c:985\njl_repl_entrypoint at C:/workdir/src\\jlapi.c:1152\nmainCRTStartup at C:/workdir/cli\\loader_exe.c:58\nBaseThreadInitThunk at C:\\WINDOWS\\System32\\KERNEL32.DLL (unknown line)\nRtlUserThreadStart at C:\\WINDOWS\\SYSTEM32\\ntdll.dll (unknown line)\n\n",
+ "peak_rss_sampled": 5448257536,
+ "unit_wall": 483.7837189999991,
+ "cell": "ghz60r3w24_noisy_S10000",
+ "query": "marg30",
+ "system": "galley",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "lock_end": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "core": 30,
+ "finished": "2026-11-09T22:43:34"
+}

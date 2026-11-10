@@ -7,6 +7,7 @@ of the same (instance, S, query)); Galley's = galley() wall time warm (planning 
 its execution time alone (B2). Export: D:/runs/knitplan/e1/galley/<case>.npz/.json, run by derisk/d2_galley.jl with
 GALLEY_DIR set. Usage: python derisk/e1_galley_export.py <instance ids comma-separated> [S]
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys
 from pathlib import Path
 
@@ -18,7 +19,7 @@ from knitplan import engine as E
 from knitplan.shots import load_tables
 from e1_time import queries
 
-OUT = Path("D:/runs/knitplan/e1/galley"); OUT.mkdir(parents=True, exist_ok=True)
+OUT = Path(_RUNS + "/e1/galley"); OUT.mkdir(parents=True, exist_ok=True)
 
 
 def main():
@@ -27,9 +28,9 @@ def main():
     idx_of = {inst["id"]: i for i, inst in enumerate(man["instances"])}
     cases = []
     for iid in ids:
-        d = pickle.load(open(f"D:/runs/knitplan/e1/inst/{iid}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/e1/inst/{iid}.pkl", "rb"))
         sch = d["scheme"]; models = E.sub_models(sch)
-        tabs = {p: load_tables(f"D:/runs/knitplan/e1/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+        tabs = {p: load_tables(f"{_RUNS}/e1/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
         for qname, (A, sel) in queries(sch.n, idx_of[iid]).items():
             arrays, tensors, outs = {}, [], []
             ok = True

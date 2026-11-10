@@ -3,6 +3,7 @@
 Usage: python derisk/d3_screen.py [instance ids comma-separated] ; results per cell in derisk/results/D3/*.json
 (checkpointed: finished cells are skipped on rerun).
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[v] = "1"
@@ -131,13 +132,13 @@ def main():
     for idx, inst in enumerate(man["instances"]):
         if inst["status"] != "ok" or inst["id"] in CONTROLS or (only and inst["id"] not in only):
             continue
-        d = pickle.load(open(f"D:/runs/knitplan/pilot/{inst['id']}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/pilot/{inst['id']}.pkl", "rb"))
         sch = d["scheme"]; models = E.sub_models(sch)
         for noise in inst["noise"]:
             for S in BUDGETS:
-                if not Path(f"D:/runs/knitplan/shots/{inst['id']}/{noise}/sub{sch.r-1}_S{S}.npz").exists():
+                if not Path(f"{_RUNS}/shots/{inst['id']}/{noise}/sub{sch.r-1}_S{S}.npz").exists():
                     print(inst["id"], noise, S, "shots missing, skipped this pass", flush=True); continue
-                tabs = {p: load_tables(f"D:/runs/knitplan/shots/{inst['id']}/{noise}/sub{p}_S{S}.npz")[2]
+                tabs = {p: load_tables(f"{_RUNS}/shots/{inst['id']}/{noise}/sub{p}_S{S}.npz")[2]
                         for p in range(sch.r)}
                 for qname, (A, sel) in queries(sch.n, idx).items():
                     t = time.time()

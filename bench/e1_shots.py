@@ -6,6 +6,7 @@ manifest D:/runs/knitplan/e1/shots/manifest.jsonl. Width <= 24: Aer statevector 
 Aer matrix_product_state shots (knitplan.shots.generate_unit_mps).
 Usage: python bench/e1_shots.py [--only ids] [--threads 2]
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import argparse, json, pickle, sys, time
 from pathlib import Path
 
@@ -37,7 +38,7 @@ def main():
     ap.add_argument("--exp", default="e1", help="e1 (bench/E1_MANIFEST.json), e2 (bench/E2_MANIFEST.json) or m1 "
                     "(bench/MANIFEST.json, frozen main workload; noisy = the pre-registered protocol method)")
     a = ap.parse_args()
-    out_root = Path(f"D:/runs/knitplan/{a.exp}/shots"); out_root.mkdir(parents=True, exist_ok=True)
+    out_root = Path(f"{_RUNS}/{a.exp}/shots"); out_root.mkdir(parents=True, exist_ok=True)
     man_path = out_root / "manifest.jsonl"
     done = set()
     if man_path.exists():
@@ -48,7 +49,7 @@ def main():
     for inst in man["instances"]:
         if only and inst["id"] not in only:
             continue
-        d = pickle.load(open(f"D:/runs/knitplan/{a.exp}/inst/{inst['id']}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/{a.exp}/inst/{inst['id']}.pkl", "rb"))
         sch = d["scheme"]; subs = subcircuits(d["circ"], sch)
         for noise in inst["noise"]:
             for p in range(sch.r):

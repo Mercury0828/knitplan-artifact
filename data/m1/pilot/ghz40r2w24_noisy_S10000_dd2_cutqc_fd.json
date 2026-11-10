@@ -1,0 +1,13 @@
+{
+ "dnf": "infeasible: full distribution 2^40",
+ "dnf_kind": "memory rule",
+ "peak_rss_sampled": 0,
+ "unit_wall": 5.629999213851988e-05,
+ "cell": "ghz40r2w24_noisy_S10000",
+ "query": "dd2",
+ "system": "cutqc_fd",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "core": 30,
+ "finished": "2026-11-09T19:38:37"
+}

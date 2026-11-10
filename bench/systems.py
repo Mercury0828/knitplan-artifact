@@ -2,6 +2,7 @@
 
 Uniform interface: ``SYSTEMS[name](ctx) -> (keys, vals)`` with keys = sorted int64 codes over the query's free qubits A
 in ascending global order (bit k of a key = qubit A[k]), vals = the answer Q(z) (absent key = 0). Each call starts
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 from the raw shot tables and does everything the system needs (statistics, planning / path search, format conversion,
 execution), so its wall time is the end-to-end time Γ. A system that cannot run within the memory rule raises
 ``Infeasible`` (recorded as DNF with the reason, never dropped).
@@ -412,7 +413,7 @@ def duckdb_pushdown(ctx):
 JULIA = r"D:\_caches\julia-bin\julia-1.13.3\bin\julia.exe"
 GALLEY_ENV = r"D:\runs\knitplan\galley_env"
 QCUT_PY = r"D:\_caches\envs\knitplan-qcut\Scripts\python.exe"
-EXT_TMP = Path("D:/runs/knitplan/bench_tmp")
+EXT_TMP = Path(_RUNS + "/bench_tmp")
 EXT_TIMEOUT = 3600.0          # DNF rule of the main evaluation (> 1 h)
 _ONE_THREAD = {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "JULIA_NUM_THREADS": "1"}
 

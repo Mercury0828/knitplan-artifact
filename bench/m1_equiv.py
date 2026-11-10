@@ -12,6 +12,7 @@ Per (cell, query), from the timed run's unit files (D:/runs/knitplan/m1/T):
 Output: D:/runs/knitplan/m1/Q1.jsonl (one line per (cell, query); resumable).
 Usage: python bench/m1_equiv.py
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys
 from pathlib import Path
 

@@ -1,0 +1,20 @@
+{
+ "time": 0.161058800003957,
+ "reps": [
+  0.161058800003957
+ ],
+ "warmup": 0.1403201000066474,
+ "answer_entries": 16339,
+ "vcheck_diff": 5.551115123125783e-17,
+ "vcheck_pass": true,
+ "tau": 3.923155088881718e-14,
+ "peak_rss_sampled": 108462080,
+ "unit_wall": 0.3104108000115957,
+ "cell": "hwea40r3w16_noisy_S10000",
+ "query": "dd1",
+ "system": "duckdb_pushdown",
+ "lock_start": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "lock_end": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "core": 30,
+ "finished": "2026-11-10T02:28:18"
+}

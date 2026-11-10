@@ -9,6 +9,7 @@ Fixed rules (a)-(f), planner v1 (calibrated cost model, exact cut statistics) an
 nnz-only statistics) are looked up in the timed table; planning time is measured (median of 5) and added.
 Usage: python derisk/e1_time.py calibrate | run [instance ids]   Results: derisk/results/E1/T/*.json
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[v] = "1"
@@ -150,11 +151,11 @@ def main():
     for idx, inst in enumerate(man["instances"]):
         if inst["stratum"] not in ("T", "TW") or (only and inst["id"] not in only):
             continue
-        d = pickle.load(open(f"D:/runs/knitplan/e1/inst/{inst['id']}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/e1/inst/{inst['id']}.pkl", "rb"))
         sch = d["scheme"]; models = E.sub_models(sch)
         for noise in inst["noise"]:
             for S in inst["budgets"]:
-                tabs = {p: load_tables(f"D:/runs/knitplan/e1/shots/{inst['id']}/{noise}/sub{p}_S{S}.npz")[2]
+                tabs = {p: load_tables(f"{_RUNS}/e1/shots/{inst['id']}/{noise}/sub{p}_S{S}.npz")[2]
                         for p in range(sch.r)}
                 for qname, (A, sel) in queries(sch.n, idx).items():
                     path = OUT / f"{inst['id']}_{noise}_S{S}_{qname}.json"

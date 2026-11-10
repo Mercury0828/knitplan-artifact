@@ -4,12 +4,13 @@ sample (Aer statevector for width <= 24, Aer matrix_product_state for wider). Ru
 output only fixes the instance list by the pre-set feasibility rule stated there.
 Output: D:/runs/knitplan/e1/probe.jsonl (one line per case), D:/runs/knitplan/e1/inst/<id>.pkl
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 os.environ.setdefault("OMP_NUM_THREADS", "1")
 import json, math, pickle, sys, time
 from pathlib import Path
 
-sys.path.insert(0, "D:/runs/knitplan/ext/CutQC"); sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, _RUNS + "/ext/CutQC"); sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from helper_functions.benchmarks import generate_circ
 from qiskit import QuantumCircuit
 QuantumCircuit.u3 = lambda self, theta, phi, lam, q: self.u(theta, phi, lam, q)  # qiskit 2 removed u3; U == u3 exactly
@@ -17,7 +18,7 @@ from qcg.generators import gen_supremacy
 from knitplan.cutting import find_scheme, strip, subcircuits
 from knitplan.shots import configurations, config_circuit
 
-OUT = Path("D:/runs/knitplan/e1"); (OUT / "inst").mkdir(parents=True, exist_ok=True)
+OUT = Path(_RUNS + "/e1"); (OUT / "inst").mkdir(parents=True, exist_ok=True)
 MAX_CONFIGS = 1024
 
 

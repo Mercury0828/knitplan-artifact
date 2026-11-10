@@ -1,0 +1,26 @@
+{
+ "time": 0.44622380001237616,
+ "timing": {
+  "t_stat": 0.01251960001536645,
+  "t_conv": 0.008214200002839789,
+  "t_exec": 0.4254899999941699,
+  "excluded": {
+   "cold_total": 0.39783920001355,
+   "subprocess_wall": 2.739800399984233
+  }
+ },
+ "call_wall": 2.8310137999942526,
+ "answer_entries": 1048576,
+ "vcheck_diff": 1.1102230246251565e-15,
+ "vcheck_pass": true,
+ "tau": 8.752998326146518e-11,
+ "peak_rss_sampled": 271556608,
+ "unit_wall": 3.0835090999898966,
+ "cell": "ghz60r4w18_noisy_S10000",
+ "query": "marg20",
+ "system": "qcut",
+ "lock_start": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "lock_end": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "core": 30,
+ "finished": "2026-11-09T23:22:11"
+}

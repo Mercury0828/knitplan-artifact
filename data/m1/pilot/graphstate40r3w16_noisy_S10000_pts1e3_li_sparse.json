@@ -1,0 +1,13 @@
+{
+ "dnf": "infeasible: sparse rows 1153012165",
+ "dnf_kind": "memory rule",
+ "peak_rss_sampled": 133615616,
+ "unit_wall": 0.1342966000083834,
+ "cell": "graphstate40r3w16_noisy_S10000",
+ "query": "pts1e3",
+ "system": "li_sparse",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-10 09:04 UTC (light use only: 2",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-10 09:04 UTC (light use only: 2",
+ "core": 30,
+ "finished": "2026-11-10T04:13:37"
+}

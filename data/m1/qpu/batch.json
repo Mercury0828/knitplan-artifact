@@ -1,0 +1,203 @@
+{
+ "S": 4096,
+ "instances": [
+  {
+   "id": "adder40r2w24",
+   "family": "adder",
+   "stratum": "narrow",
+   "n": 40,
+   "c": 2,
+   "widths": [
+    22,
+    20
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "circuits": 24
+  },
+  {
+   "id": "graphstate40r2w24",
+   "family": "graphstate",
+   "stratum": "narrow",
+   "n": 40,
+   "c": 2,
+   "widths": [
+    21,
+    21
+   ],
+   "configs": [
+    9,
+    16
+   ],
+   "circuits": 25
+  },
+  {
+   "id": "hetero40r2w24",
+   "family": "hetero",
+   "stratum": "narrow",
+   "n": 40,
+   "c": 2,
+   "widths": [
+    21,
+    21
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "circuits": 24
+  },
+  {
+   "id": "hwea40r2w24",
+   "family": "hwea",
+   "stratum": "narrow",
+   "n": 40,
+   "c": 1,
+   "widths": [
+    23,
+    18
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "circuits": 7
+  },
+  {
+   "id": "qnn40r2w24",
+   "family": "qnn",
+   "stratum": "narrow",
+   "n": 40,
+   "c": 1,
+   "widths": [
+    22,
+    19
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "circuits": 7
+  },
+  {
+   "id": "supremacy_d430r2w18",
+   "family": "supremacy_d4",
+   "stratum": "narrow",
+   "n": 30,
+   "c": 1,
+   "widths": [
+    14,
+    17
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "circuits": 7
+  },
+  {
+   "id": "wstate40r2w24",
+   "family": "wstate",
+   "stratum": "narrow",
+   "n": 40,
+   "c": 2,
+   "widths": [
+    20,
+    22
+   ],
+   "configs": [
+    16,
+    9
+   ],
+   "circuits": 25
+  },
+  {
+   "id": "graphstate60r2w34",
+   "family": "graphstate",
+   "stratum": "wide",
+   "n": 60,
+   "c": 2,
+   "widths": [
+    29,
+    33
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "circuits": 24
+  },
+  {
+   "id": "hetero60r2w34",
+   "family": "hetero",
+   "stratum": "wide",
+   "n": 60,
+   "c": 2,
+   "widths": [
+    31,
+    31
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "circuits": 24
+  },
+  {
+   "id": "hwea80r3w30",
+   "family": "hwea",
+   "stratum": "wide",
+   "n": 80,
+   "c": 2,
+   "widths": [
+    30,
+    24,
+    28
+   ],
+   "configs": [
+    3,
+    12,
+    4
+   ],
+   "circuits": 19
+  },
+  {
+   "id": "qnn80r3w30",
+   "family": "qnn",
+   "stratum": "wide",
+   "n": 80,
+   "c": 2,
+   "widths": [
+    30,
+    25,
+    27
+   ],
+   "configs": [
+    3,
+    12,
+    4
+   ],
+   "circuits": 19
+  },
+  {
+   "id": "wstate60r2w34",
+   "family": "wstate",
+   "stratum": "wide",
+   "n": 60,
+   "c": 2,
+   "widths": [
+    30,
+    32
+   ],
+   "configs": [
+    16,
+    9
+   ],
+   "circuits": 25
+  }
+ ],
+ "circuits": 230,
+ "estimate_s": 280.9
+}

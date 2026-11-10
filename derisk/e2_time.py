@@ -16,6 +16,7 @@ Per cell (instance, noise, S, query):
 Every answer is V-checked against the first finished plan within the certified tau_eq.
 Usage: python derisk/e2_time.py run [instance ids] | smoke <instance> <S> <query>   Results: derisk/results/E2/T/*.json
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[v] = "1"
@@ -37,7 +38,7 @@ CM = ROOT / "derisk" / "results" / "E1" / "cost_model.json"   # calibrated on th
 CAP, REPS, PRUNE = 60.0, 5, 5.0
 T_NT = 0.1               # Entry 6b: non-trivial iff rule (b) total >= 0.1 s or DNF
 SCREEN_BUDGET = 300.0    # Entry 6b: wall seconds of plan-space screening per non-trivial cell
-REFTMP = Path("D:/runs/knitplan/e2_tmp")   # reference answers passed to respawned workers as files
+REFTMP = Path(_RUNS + "/e2_tmp")   # reference answers passed to respawned workers as files
 SEED_M30 = 20261109      # marg30 drawn from its own stream so the E1-style queries are unchanged
 RULE_B = "b_dense_cutqc_order"
 
@@ -261,9 +262,9 @@ def cell(path, iid, idx, noise, S, qname, A, sel, models, tabs, c, model, screen
 
 
 def load_inst(inst, noise, S):
-    d = pickle.load(open(f"D:/runs/knitplan/e2/inst/{inst['id']}.pkl", "rb"))
+    d = pickle.load(open(f"{_RUNS}/e2/inst/{inst['id']}.pkl", "rb"))
     sch = d["scheme"]; models = E.sub_models(sch)
-    tabs = {p: load_tables(f"D:/runs/knitplan/e2/shots/{inst['id']}/{noise}/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+    tabs = {p: load_tables(f"{_RUNS}/e2/shots/{inst['id']}/{noise}/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
     return sch, models, tabs
 
 

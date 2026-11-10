@@ -5,6 +5,7 @@ support for each E1 query relative to 4^{|delta(j)|} 2^{|A cap O_j|} (with |A ca
 sparse left-deep default plan when it fits the row cap. Checkpointed per unit: derisk/results/E1/W/*.json.
 Usage: python derisk/e1_support.py [workers]
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, os, pickle, sys, time
 from multiprocessing import Pool
 from pathlib import Path
@@ -31,9 +32,9 @@ def unit(args):
     path = OUT / f"{iid}_{noise}_S{S}.json"
     if path.exists():
         return iid, noise, S, "skip"
-    d = pickle.load(open(f"D:/runs/knitplan/e1/inst/{iid}.pkl", "rb"))
+    d = pickle.load(open(f"{_RUNS}/e1/inst/{iid}.pkl", "rb"))
     sch = d["scheme"]; models = E.sub_models(sch)
-    tabs = {p: load_tables(f"D:/runs/knitplan/e1/shots/{iid}/{noise}/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+    tabs = {p: load_tables(f"{_RUNS}/e1/shots/{iid}/{noise}/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
     rec = {"id": iid, "noise": noise, "S": S, "c": sch.c, "r": sch.r, "n": sch.n, "merged": {}, "queries": {}}
     for m in models:
         f = E.build_factor(m, tabs[m.p], S, A=None, sel=None, position="before")
@@ -69,7 +70,7 @@ def main():
     for idx, inst in enumerate(man["instances"]):
         for noise in inst["noise"]:
             for S in inst["budgets"]:
-                if Path(f"D:/runs/knitplan/e1/shots/{inst['id']}/{noise}/sub{inst['r']-1}_S{S}.npz").exists():
+                if Path(f"{_RUNS}/e1/shots/{inst['id']}/{noise}/sub{inst['r']-1}_S{S}.npz").exists():
                     jobs.append((inst["id"], idx, noise, S))
     with Pool(int(sys.argv[1]) if len(sys.argv) > 1 else 2) as pool:
         for r in pool.imap_unordered(unit, jobs):

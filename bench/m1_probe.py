@@ -8,6 +8,7 @@ The CutQC families (CUTQC_FAMILIES, generators of bench/e1_probe.py) are probed 
 Output: D:/runs/knitplan/m1/probe.jsonl (one line per case, resumable), D:/runs/knitplan/m1/inst/<id>.pkl
 Usage: python bench/m1_probe.py [family,family,...]   (light: one thread)
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 os.environ.setdefault("OMP_NUM_THREADS", "1")
 import json, pickle, sys, time
@@ -19,7 +20,7 @@ from knitplan.cutting import find_scheme, strip, subcircuits
 from knitplan.shots import configurations
 from e1_probe import sample_cost, generate_circ, gen_supremacy, grid_ok, hetero
 
-OUT = Path("D:/runs/knitplan/m1"); (OUT / "inst").mkdir(parents=True, exist_ok=True)
+OUT = Path(_RUNS + "/m1"); (OUT / "inst").mkdir(parents=True, exist_ok=True)
 MAX_CONFIGS = 1024
 CUTQC_FAMILIES = ["adder", "supremacy_d4", "supremacy", "hwea", "bv", "aqft", "regular", "hetero"]
 SEED = 2

@@ -1,0 +1,13 @@
+{
+ "dnf": "infeasible: Infeasible: dense marginal of 40 bits",
+ "dnf_kind": "memory rule",
+ "peak_rss_sampled": 204414976,
+ "unit_wall": 4.390813800011529,
+ "cell": "ghz40r2w24_noisy_S10000",
+ "query": "margn",
+ "system": "qcut",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "core": 30,
+ "finished": "2026-11-09T19:20:39"
+}

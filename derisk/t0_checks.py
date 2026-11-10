@@ -1,11 +1,12 @@
-﻿"""T0 R1 follow-ups (rounds/T0-semantics_round1_response.md), no timings:
+﻿"""the tolerance analysis, no timings:
 (1) recheck every D3 V-check (stored |plan answer - reference plan answer|) against the certified tau_eq;
 (2) support estimates per fold step vs the exact L3 support: predicted_support (Phase-0 upper bound used by the default
-    rule), exact_support_nc (T0 R1 (e) formula, no product enumeration), the actual nnz of the product (and the
+    rule), exact_support_nc (the tolerance analysis, no product enumeration), the actual nnz of the product (and the
     enumerated union of candidate keys, which must equal exact_support_nc), and whether the default rule's choices
     change when the exact support replaces the bound.
 Usage: python derisk/t0_checks.py  -> derisk/results/T0_checks/<cell>.json + T0_checks_summary.json
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[v] = "1"
@@ -76,7 +77,7 @@ CELLDIR = ROOT / "derisk/results/T0_checks"
 
 def one_cell(c, sch, models):
     iid, noise, S = c["id"], c["noise"], c["S"]
-    tabs = {p: load_tables(f"D:/runs/knitplan/shots/{iid}/{noise}/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+    tabs = {p: load_tables(f"{_RUNS}/shots/{iid}/{noise}/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
     A = c["A"]; sel = {int(k): v for k, v in c["sel"].items()} if c["sel"] else None
     det = E.tau_eq_details(models, tabs, S, set(A), sel, sch.c)
     tau, B = E.tau_eq(models, tabs, S, set(A), sel, sch.c)
@@ -118,7 +119,7 @@ def main():
         if not cp.exists():
             c = json.loads(Path(f).read_text())
             if c["id"] not in cache:
-                d = pickle.load(open(f"D:/runs/knitplan/pilot/{c['id']}.pkl", "rb"))
+                d = pickle.load(open(f"{_RUNS}/pilot/{c['id']}.pkl", "rb"))
                 cache = {c["id"]: (d["scheme"], E.sub_models(d["scheme"]))}
             sch, models = cache[c["id"]]
             for attempt in range(6):

@@ -1,0 +1,20 @@
+{
+ "time": 0.06289159998414107,
+ "reps": [
+  0.06289159998414107
+ ],
+ "warmup": 0.09061049998854287,
+ "answer_entries": 1008,
+ "vcheck_diff": 0.0,
+ "vcheck_pass": true,
+ "tau": 6.149065256991932e-09,
+ "peak_rss_sampled": 78049280,
+ "unit_wall": 0.18996150000020862,
+ "cell": "adder30r3w12_noisy_S10000",
+ "query": "marg10",
+ "system": "knitplan",
+ "lock_start": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "lock_end": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "core": 30,
+ "finished": "2026-11-10T00:17:54"
+}

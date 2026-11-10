@@ -17,6 +17,7 @@ E:/Project-git/CPU_LOCK.txt, worker pinned to one P-core (M1_CORE, default 4), e
 Peak memory: the parent samples the worker's working set every 50 ms during each unit (sampled peak, reported).
 Checkpoint: one JSON per unit in D:/runs/knitplan/m1/T/ (atomic); a rerun skips finished units.
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import os
 for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[v] = "1"
@@ -29,7 +30,7 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT)); sys.path.insert(0, str(ROOT / "bench")); sys.path.insert(0, str(ROOT / "derisk"))
 
-RUNS = Path("D:/runs/knitplan/m1")
+RUNS = Path(_RUNS + "/m1")
 # M1_PILOT=1: untimed sizing pass (not evidence; no lock, E-core): warm-up + 1 run, CAP 600 s, noisy S = 10^4 cells
 # only, output D:/runs/knitplan/m1/pilot/ -- used only to size the lock booking and to catch harness errors early
 PILOT = os.environ.get("M1_PILOT") == "1"

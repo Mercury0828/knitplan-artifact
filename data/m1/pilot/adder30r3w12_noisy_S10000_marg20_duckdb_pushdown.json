@@ -1,0 +1,16 @@
+{
+ "dnf": "run > 120 s",
+ "dnf_kind": "time",
+ "at_run": 0,
+ "time_at_stop": 120.05106649998925,
+ "rss_at_stop": 245968896,
+ "peak_rss_sampled": 248852480,
+ "unit_wall": 120.29599920002511,
+ "cell": "adder30r3w12_noisy_S10000",
+ "query": "marg20",
+ "system": "duckdb_pushdown",
+ "lock_start": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "lock_end": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "core": 30,
+ "finished": "2026-11-10T00:29:15"
+}

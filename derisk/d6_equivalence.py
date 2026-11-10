@@ -7,17 +7,18 @@
     imported as-is) on every pilot instance that fits in memory; relative L1 <= 1e-12.
 (c) full-distribution reconstruction on the n = 20 instances: every KNITPLAN plan vs CutQC GraphContractor
     (+ output reordering), max abs diff vs tau_eq.
-tau_eq: since T0 R1 (2026-11-07) the certified tolerance E.tau_eq = roundUp((gamma_D1 + gamma_D2) * B); the Phase-0
+tau_eq: the certified tolerance E.tau_eq = roundUp((gamma_D1 + gamma_D2) * B); the Phase-0
 value 1e-12 * W (E.tau_eq_legacy) is recorded alongside for comparison. Output: derisk/results/D6.json (Phase-0 run with
 the legacy tau) and derisk/results/D6_certified.json (rerun with the certified tau).
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import ast, itertools, json, math, pickle, sys, time
 from pathlib import Path
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT)); sys.path.insert(0, "D:/runs/knitplan/ext/CutQC")
+sys.path.insert(0, str(ROOT)); sys.path.insert(0, _RUNS + "/ext/CutQC")
 from qiskit.circuit.random import random_circuit
 from knitplan.cutting import find_scheme, strip, subcircuits
 from knitplan.shots import configurations, load_tables
@@ -26,7 +27,7 @@ from cutqc.post_process_helper import generate_compute_graph, generate_subcircui
 from cutqc.graph_contraction import GraphContractor
 
 # --- CutQC evaluator functions, executed from their source (module import pulls in IBMQ helpers we do not need)
-_src = Path("D:/runs/knitplan/ext/CutQC/cutqc/evaluator.py").read_text()
+_src = Path(_RUNS + "/ext/CutQC/cutqc/evaluator.py").read_text()
 _tree = ast.parse(_src)
 _ns = {"np": np, "itertools": itertools}
 for node in _tree.body:
@@ -196,7 +197,7 @@ def cutqc_full(sch, subs, graph, entry_probs):
 
 def main():
     global OUTF
-    res = {"date": time.strftime("%Y-%m-%d"), "tau": "certified (T0 R1)", "part_a": None, "part_b": [], "part_c": []}
+    res = {"date": time.strftime("%Y-%m-%d"), "tau": "certified", "part_a": None, "part_b": [], "part_c": []}
     if len(sys.argv) > 1 and sys.argv[1] == "a":
         res = json.loads((OUT / OUTF).read_text())
         res["part_a"] = part_a()
@@ -208,10 +209,10 @@ def main():
     for inst in man["instances"]:
         if inst["status"] != "ok":
             continue
-        d = pickle.load(open(f"D:/runs/knitplan/pilot/{inst['id']}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/pilot/{inst['id']}.pkl", "rb"))
         circ, sch = d["circ"], d["scheme"]
         models = E.sub_models(sch)
-        tabs = {p: load_tables(f"D:/runs/knitplan/shots/{inst['id']}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+        tabs = {p: load_tables(f"{_RUNS}/shots/{inst['id']}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
         fits = all(len(configurations(sch, p)[2]) * 2 ** len(sch.sub_qubits[p]) <= 2 ** 28 and
                    4 ** len(m.deg_cuts) * 2 ** len(m.out_qubits) <= 2 ** 27 for p, m in enumerate(models))
         if not fits:

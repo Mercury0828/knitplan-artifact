@@ -5,6 +5,7 @@ Per (instance, noise, S): raw support per configuration; merged-factor support (
 plan's intermediates (sparse, row cap) and of the flat answer relative to 2^{|A|}.
 Checkpointed per unit (one JSON per unit in derisk/results/D1/); a rerun skips finished units.
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, os, pickle, sys, time
 from multiprocessing import Pool
 from pathlib import Path
@@ -32,11 +33,11 @@ def unit(args):
     path = OUT / f"{iid}_{noise}_S{S}.json"
     if path.exists():
         return iid, noise, S, "skip"
-    d = pickle.load(open(f"D:/runs/knitplan/pilot/{iid}.pkl", "rb"))
+    d = pickle.load(open(f"{_RUNS}/pilot/{iid}.pkl", "rb"))
     sch = d["scheme"]; models = E.sub_models(sch)
     tabs, raw = {}, {}
     for p in range(sch.r):
-        _, _, t = load_tables(f"D:/runs/knitplan/shots/{iid}/{noise}/sub{p}_S{S}.npz")
+        _, _, t = load_tables(f"{_RUNS}/shots/{iid}/{noise}/sub{p}_S{S}.npz")
         tabs[p] = t
         w = len(sch.sub_qubits[p])
         ratios = [len(i) / min(S, 2 ** w) for i, _ in t.values()]
@@ -79,7 +80,7 @@ def main():
             continue
         for noise in inst["noise"]:
             for S in BUDGETS:
-                if Path(f"D:/runs/knitplan/shots/{inst['id']}/{noise}/sub{inst['r']-1}_S{S}.npz").exists():
+                if Path(f"{_RUNS}/shots/{inst['id']}/{noise}/sub{inst['r']-1}_S{S}.npz").exists():
                     jobs.append((inst["id"], idx, noise, S))
     with Pool(int(sys.argv[1]) if len(sys.argv) > 1 else 3) as pool:
         for r in pool.imap_unordered(unit, jobs):

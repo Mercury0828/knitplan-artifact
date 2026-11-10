@@ -13,19 +13,20 @@ Every excluded candidate is listed with its reason in the manifest (nothing is d
 Output: bench/MANIFEST.json
 Usage: python bench/m1_build.py
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys
 from pathlib import Path
 
 sys.path[:0] = [str(Path(__file__).resolve().parents[1]), str(Path(__file__).resolve().parent)]  # pickles hold knitplan objects
 
 ROOT = Path(__file__).resolve().parents[1]
-PROBE = Path("D:/runs/knitplan/m1/probe.jsonl")
+PROBE = Path(_RUNS + "/m1/probe.jsonl")
 EST_CAP_H = 2.0
 
 
 def dev_instance(iid):
     for exp in ("e1", "e2"):
-        p = Path(f"D:/runs/knitplan/{exp}/inst/{iid}.pkl")
+        p = Path(f"{_RUNS}/{exp}/inst/{iid}.pkl")
         if p.exists():
             return exp, pickle.load(open(p, "rb"))
     return None, None
@@ -47,7 +48,7 @@ def main():
         else:
             exp, d = dev_instance(r["id"])
             if d is not None:
-                m = pickle.load(open(f"D:/runs/knitplan/m1/inst/{r['id']}.pkl", "rb"))
+                m = pickle.load(open(f"{_RUNS}/m1/inst/{r['id']}.pkl", "rb"))
                 if m["circ"] == d["circ"] and m["scheme"].widths() == d["scheme"].widths() and \
                         m["scheme"].c == d["scheme"].c:
                     why = f"identical to {exp.upper()} development instance"

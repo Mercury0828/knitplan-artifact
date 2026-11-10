@@ -3,6 +3,7 @@ KNITPLAN at boundary B1 (resident pushed-down factors: KNITPLAN = planner v1 pla
 cell of the same instance / S / query) and B2 (plan reuse: Galley execution only vs KNITPLAN fold only of the v1 plan).
 Answers are checked against KNITPLAN's v1-plan answer within the certified tau_eq (the pre-registered protocol). K-GALLEY condition:
 Galley <= 1.10x KNITPLAN on >= 90 % of cases (B1). Writes derisk/results/E1/G.json."""
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys
 from pathlib import Path
 
@@ -13,7 +14,7 @@ sys.path.insert(0, str(ROOT))
 from knitplan import engine as E, planner as P
 from knitplan.shots import load_tables
 
-D = Path("D:/runs/knitplan/e1/galley")
+D = Path(_RUNS + "/e1/galley")
 
 
 def plan_from_key(key):
@@ -44,8 +45,8 @@ def main():
         if "error" in g:
             rows.append({"case": case, "status": "ERROR", "error": g["error"][:500]}); continue
         A = spec["A"]; sel = {int(k): v for k, v in spec["sel"].items()} or None
-        d = pickle.load(open(f"D:/runs/knitplan/e1/inst/{iid}.pkl", "rb")); sch = d["scheme"]; models = E.sub_models(sch)
-        tabs = {p: load_tables(f"D:/runs/knitplan/e1/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+        d = pickle.load(open(f"{_RUNS}/e1/inst/{iid}.pkl", "rb")); sch = d["scheme"]; models = E.sub_models(sch)
+        tabs = {p: load_tables(f"{_RUNS}/e1/shots/{iid}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
         fs = {m.p: E.build_factor(m, tabs[m.p], S, A=set(A), sel=sel, position="before") for m in models}
         v1key = cell["planners"]["v1"]["plan"]
         o, i, v = P.fold_tree(plan_from_key(v1key), fs, sch.c)

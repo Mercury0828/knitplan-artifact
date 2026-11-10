@@ -14,6 +14,7 @@ Every configuration of every subcircuit of a selected instance runs once with S 
   fetch    downloads finished jobs; counts -> D:/runs/knitplan/m1/shots/<id>/qpu/sub<p>_S4096.npz (same format as
            knitplan.shots.generate_unit: bit i = local subcircuit qubit i); usage per job recorded
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys, time
 from pathlib import Path
 
@@ -24,7 +25,7 @@ sys.path[:0] = [str(ROOT), str(ROOT / "bench")]
 from knitplan.cutting import subcircuits
 from knitplan.shots import configurations, config_circuit, _atomic_save
 
-RUNS = Path("D:/runs/knitplan/m1")
+RUNS = Path(_RUNS + "/m1")
 QDIR = RUNS / "qpu"
 S_DEV, ENVELOPE_S, CONTROLS = 4096, 600.0, {"bv", "ghz"}
 SEC_PER_SHOT = 0.26e-3          # rep_delay 250 us + circuit + measurement (derisk/QPU_PLAN.md)

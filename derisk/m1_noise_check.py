@@ -12,6 +12,7 @@ configuration: TVD(GD, exact), the S = 10^4 sampling TVD, and the expected numbe
 readout at S in {10^3, 10^4, 10^5} under both. The adoption rule is fixed in the pre-registered protocol.
 Usage: python derisk/m1_noise_check.py   (light: one thread)  -> derisk/results/M1/N.json
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys, time
 from pathlib import Path
 
@@ -65,7 +66,7 @@ def main():
     ctx = archived_noisy_context(); props = ctx.backend.properties()
     rows = []
     for iid in INSTANCES:
-        d = pickle.load(open(f"D:/runs/knitplan/e1/inst/{iid}.pkl", "rb"))
+        d = pickle.load(open(f"{_RUNS}/e1/inst/{iid}.pkl", "rb"))
         sch = d["scheme"]; subs = subcircuits(d["circ"], sch)
         cand = [(p, ci) for p in range(sch.r) for ci in range(len(configurations(sch, p)[2]))]
         step = max(1, len(cand) // PER_INSTANCE)

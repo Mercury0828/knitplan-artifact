@@ -1,0 +1,16 @@
+{
+ "dnf": "run > 120 s",
+ "dnf_kind": "time",
+ "at_run": 0,
+ "time_at_stop": 360.0188092000026,
+ "rss_at_stop": 1104830464,
+ "peak_rss_sampled": 1117454336,
+ "unit_wall": 360.76738320000004,
+ "cell": "hwea40r3w16_noisy_S10000",
+ "query": "marg30",
+ "system": "galley",
+ "lock_start": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "lock_end": "HOLDER: iqstore-icde (handed over early by liveq-pldi at 2026-11-10 04:38 UTC for iqstore's ~5 h TEST timing block: one ",
+ "core": 30,
+ "finished": "2026-11-10T01:39:54"
+}

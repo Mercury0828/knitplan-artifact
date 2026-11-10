@@ -1,0 +1,13 @@
+{
+ "dnf": "infeasible: MemoryError: Unable to allocate 8.00 GiB for an array with shape (1073741824,) and data type float64",
+ "dnf_kind": "memory rule",
+ "peak_rss_sampled": 164433920,
+ "unit_wall": 133.36885840000468,
+ "cell": "ghz30r2w18_noisy_S10000",
+ "query": "dd2",
+ "system": "qcut",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "core": 30,
+ "finished": "2026-11-09T17:59:26"
+}

@@ -1,5 +1,6 @@
 """Untimed equivalence test of bench/systems.py: every system vs KNITPLAN within the certified tau_eq (V1, all entries).
 Usage: python tools/test_systems.py   (light, single thread)"""
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys, time
 from pathlib import Path
 import numpy as np
@@ -9,9 +10,9 @@ from knitplan import engine as E, planner as P
 from knitplan.shots import load_tables
 import systems as SY
 
-CASES = [("pilot", "qaoa20a", "D:/runs/knitplan/pilot/{i}.pkl", "D:/runs/knitplan/shots/{i}/ideal/sub{p}_S{S}.npz", 10000),
-         ("e1", "bv30r4w10", "D:/runs/knitplan/e1/inst/{i}.pkl", "D:/runs/knitplan/e1/shots/{i}/ideal/sub{p}_S{S}.npz", 1000),
-         ("e1", "adder40r4w14", "D:/runs/knitplan/e1/inst/{i}.pkl", "D:/runs/knitplan/e1/shots/{i}/ideal/sub{p}_S{S}.npz", 1000)]
+CASES = [("pilot", "qaoa20a", _RUNS + "/pilot/{i}.pkl", _RUNS + "/shots/{i}/ideal/sub{p}_S{S}.npz", 10000),
+         ("e1", "bv30r4w10", _RUNS + "/e1/inst/{i}.pkl", _RUNS + "/e1/shots/{i}/ideal/sub{p}_S{S}.npz", 1000),
+         ("e1", "adder40r4w14", _RUNS + "/e1/inst/{i}.pkl", _RUNS + "/e1/shots/{i}/ideal/sub{p}_S{S}.npz", 1000)]
 model = P.CostModel(json.loads((ROOT / "derisk/results/E1/cost_model.json").read_text())["k"])
 fails = 0
 ONLY = next((a.split("=", 1)[1].split(",") for a in sys.argv if a.startswith("--only=")), None)

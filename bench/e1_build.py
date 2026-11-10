@@ -7,6 +7,7 @@ order; family bv is a control (reported separately, never pooled); budgets S in 
 plus 'noisy' (archived ibm_cleveland model, exact density_matrix, E1-N) for T instances with every subcircuit width <= 12 and
 <= 400 configurations in total, family != bv; W/TW instances: estimated MPS sampling <= 3 h per instance (else dropped).
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import hashlib, json, sys
 from collections import Counter
 from pathlib import Path
@@ -17,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     sys.path.insert(0, str(ROOT / "bench"))
     from e1_probe import CASE_ORDER
-    rows = [json.loads(l) for l in Path("D:/runs/knitplan/e1/probe_v2.jsonl").read_text().splitlines() if l.strip()]
+    rows = [json.loads(l) for l in Path(_RUNS + "/e1/probe_v2.jsonl").read_text().splitlines() if l.strip()]
     rows.sort(key=lambda r: CASE_ORDER.index(r["id"]))  # canonical case order, independent of probe interleaving
     per = Counter()
     insts = []
@@ -42,7 +43,7 @@ def main():
                       "widths": r["widths"], "configs": r["configs"], "stratum": strata[-1] if strata != ["W"] else "W",
                       "strata": strata, "noise": noise, "budgets": [1000, 10000, 100000],
                       "role": "control" if r["family"] == "bv" else "main"})
-    man = {"source": "D:/runs/knitplan/e1/probe_v2.jsonl (bench/e1_probe.py)", "rule": __doc__.strip().splitlines()[2:],
+    man = {"source": _RUNS + "/e1/probe_v2.jsonl (bench/e1_probe.py)", "rule": __doc__.strip().splitlines()[2:],
            "instances": insts}
     s = json.dumps(man, indent=1)
     (ROOT / "bench" / "E1_MANIFEST.json").write_text(s)

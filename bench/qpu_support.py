@@ -3,6 +3,7 @@ configurations of distinct outcomes / shots, for qpu (S = 4096) and for the main
 S = 10^3 and 10^4 (same instance, same subcircuit). Output derisk/results/M1/qpu_support.json
 Usage: python bench/qpu_support.py
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, sys
 from pathlib import Path
 
@@ -12,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from knitplan.shots import load_tables
 
-RUNS = Path("D:/runs/knitplan/m1")
+RUNS = Path(_RUNS + "/m1")
 
 
 def share(path, S):

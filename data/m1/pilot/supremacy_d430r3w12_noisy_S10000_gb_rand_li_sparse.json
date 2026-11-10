@@ -1,0 +1,13 @@
+{
+ "dnf": "infeasible: sparse rows 828214948",
+ "dnf_kind": "memory rule",
+ "peak_rss_sampled": 586883072,
+ "unit_wall": 3.3770641000010073,
+ "cell": "supremacy_d430r3w12_noisy_S10000",
+ "query": "gb_rand",
+ "system": "li_sparse",
+ "lock_start": "HOLDER: none (released 2026-11-10 09:02 UTC by iqstore-icde; its timing block is done; nothing of iqstore that is timed ",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-10 09:04 UTC (light use only: 2",
+ "core": 30,
+ "finished": "2026-11-10T03:03:08"
+}

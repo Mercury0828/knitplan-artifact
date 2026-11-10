@@ -5,16 +5,17 @@ Circuits: CutQC benchmark generators (helper_functions/benchmarks.generate_circ 
 depth=1, connected_only=True, seed=1). Cut schemes: knitplan.cutting.find_scheme (simulated annealing, seed 0,
 iters 15000, restarts 6) at the stated (r, max subcircuit width W).
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import hashlib, json, pickle, sys
 from pathlib import Path
 
-sys.path.insert(0, "D:/runs/knitplan/ext/CutQC"); sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, _RUNS + "/ext/CutQC"); sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from helper_functions.benchmarks import generate_circ
 from qiskit import qasm2
 from knitplan.cutting import find_scheme, strip, scheme_manifest
 from knitplan.shots import configurations
 
-OUT = Path("D:/runs/knitplan/pilot"); OUT.mkdir(parents=True, exist_ok=True)
+OUT = Path(_RUNS + "/pilot"); OUT.mkdir(parents=True, exist_ok=True)
 ROOT = Path(__file__).resolve().parents[1]
 
 # (instance id, family, n, r, W, noise sets, role)

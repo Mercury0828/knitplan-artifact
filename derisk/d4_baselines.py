@@ -6,13 +6,14 @@
 (2) DuckDB SQL formulation over the merged factors (marginal |A| = 10 and full distribution) and over the pushed-down
     factors, compared with KNITPLAN.
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys, time, types
 from pathlib import Path
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT)); sys.path.insert(0, "D:/runs/knitplan/ext/CutQC")
+sys.path.insert(0, str(ROOT)); sys.path.insert(0, _RUNS + "/ext/CutQC")
 for name, attrs in {"helper_functions.non_ibmq_functions": ["evaluate_circ"],
                     "helper_functions.conversions": ["quasi_to_real"], "helper_functions.metrics": ["MSE"],
                     "cutqc.evaluator": ["get_num_workers"]}.items():
@@ -40,9 +41,9 @@ def dd_layer0(sch, graph, ep, mem_limit):
 
 
 def main():
-    d = pickle.load(open(f"D:/runs/knitplan/pilot/{IID}.pkl", "rb"))
+    d = pickle.load(open(f"{_RUNS}/pilot/{IID}.pkl", "rb"))
     circ, sch = d["circ"], d["scheme"]; models = E.sub_models(sch)
-    tabs = {p: load_tables(f"D:/runs/knitplan/shots/{IID}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+    tabs = {p: load_tables(f"{_RUNS}/shots/{IID}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
     rec = {"instance": IID, "S": S}
     # ---- (1) CutQC DD layer 0
     subs, graph = cutqc_graph(circ, sch)

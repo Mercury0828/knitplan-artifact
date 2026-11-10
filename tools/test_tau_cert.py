@@ -1,4 +1,4 @@
-"""Tests for the certified tau_eq (T0 R1 (f)). Run: python tools/test_tau_cert.py"""
+"""Tests for the certified tau_eq. Run: python tools/test_tau_cert.py"""
 import sys, math
 from pathlib import Path
 import numpy as np
@@ -27,7 +27,7 @@ def adversarial_case():
 
 
 def r2_overflow_case():
-    # T0 R2: int64 count sum overflows (S = 2^63, 2048 counts of 2^52): B and tau must stay positive.
+    # int64 count sum overflows (S = 2^63, 2048 counts of 2^52): B and tau must stay positive.
     S = 2 ** 63
     m = E.SubModel(0, [], {}, {}, list(range(11)), list(range(11)), [], [])
     idx = np.arange(2048, dtype=np.int64); cnt = np.full(2048, 2 ** 52, dtype=np.int64)
@@ -36,7 +36,7 @@ def r2_overflow_case():
 
 
 def r2_unnormalised_case():
-    # T0 R2: c = 0, counts [100, 100], S = 100 -> expanded absolute mass 2; B must be >= 2.
+    # c = 0, counts [100, 100], S = 100 -> expanded absolute mass 2; B must be >= 2.
     m = E.SubModel(0, [], {}, {}, [0], [0], [], [])
     tau, B = E.tau_eq([m], {0: {((), ()): (np.array([0, 1], np.int64), np.array([100, 100], np.int64))}}, 100, set(), None, 0)
     print(f"unnormalised case: B = {B}"); assert B >= 2

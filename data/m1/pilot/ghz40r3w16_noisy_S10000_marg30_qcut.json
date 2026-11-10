@@ -1,0 +1,24 @@
+{
+ "time": 179.356904699991,
+ "timing": {
+  "t_stat": 0.0070207999960985035,
+  "t_conv": 0.003483799984678626,
+  "t_exec": 179.34640010001021,
+  "excluded": {
+   "cold_total": 184.2227374999784,
+   "subprocess_wall": 414.45242479999433
+  }
+ },
+ "call_wall": 419.2574611000018,
+ "answer_entries": 164004577,
+ "tau": 1.1830536550405878e-12,
+ "peak_rss_sampled": 3771555840,
+ "unit_wall": 419.25993699999526,
+ "cell": "ghz40r3w16_noisy_S10000",
+ "query": "marg30",
+ "system": "qcut",
+ "lock_start": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "lock_end": "HOLDER: liveq-pldi (E:/Project-git/ACM SIGPLAN .../liveq-qubit-allocation) since 2026-11-09 06:14 UTC (frozen confirmati",
+ "core": 30,
+ "finished": "2026-11-09T20:06:00"
+}

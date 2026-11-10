@@ -3,7 +3,7 @@
 Plan space (extends the Phase-0 prototype): pushdown position x binary join tree over the subcircuit factors
 (bushy and left-deep; children of every internal node share at least one cut index — no cross products) x format per
 internal node {sparse, dense} x elimination granularity {joint, seq}. Elimination at a node: every cut index that occurs
-only inside the node's subtree (T0 R1 (e): a variable is eliminated only when all factors containing it are joined).
+only inside the node's subtree (the analysis (e): a variable is eliminated only when all factors containing it are joined).
 
 Planner v1 = exhaustive enumeration of that space scored by a calibrated cost model:
   dense node:  k_dense * (#multiply-adds of the einsum) + k_dconv * (dense size of each sparse child converted)
@@ -369,7 +369,7 @@ def join_stat_ref(a: Stat, b: Stat, elim):
 
 
 def _union_exact(ps, asets, bsets):
-    """|union_t U_t x V_t| by signatures (T0 R1 (e)), no product enumeration."""
+    """|union_t U_t x V_t| by signatures, no product enumeration."""
     us = [(t, asets[ka]) for t, (ka, kb, _, _) in enumerate(ps)]
     allu = np.concatenate([u for _, u in us]); tid = np.concatenate([np.full(u.size, t) for t, u in us])
     order = np.lexsort((tid, allu)); allu, tid = allu[order], tid[order]

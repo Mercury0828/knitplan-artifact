@@ -6,6 +6,7 @@ and top-k queries. Times recorded per step. QCut's wire-cut QPD differs from Cut
 Part 2 (equal semantics): KNITPLAN's CutQC-convention factors from our shot tables are loaded into QCut's
 SeparableDistribution (groups = cut-basis assignments); its marginal / point answers are compared with KNITPLAN's.
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import json, pickle, sys, time, itertools
 from pathlib import Path
 
@@ -46,7 +47,7 @@ def timeit(fn):
 
 
 def main():
-    d = pickle.load(open(f"D:/runs/knitplan/pilot/{IID}.pkl", "rb"))
+    d = pickle.load(open(f"{_RUNS}/pilot/{IID}.pkl", "rb"))
     circ, sch = strip(d["circ"]), d["scheme"]
     n = circ.num_qubits
     rng = np.random.default_rng(5)
@@ -73,7 +74,7 @@ def main():
                      "separable": type(getattr(qp, "_data", None)).__name__}
     # ---------------- part 2: equal semantics via SeparableDistribution
     models = E.sub_models(sch)
-    tabs = {p: load_tables(f"D:/runs/knitplan/shots/{IID}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
+    tabs = {p: load_tables(f"{_RUNS}/shots/{IID}/ideal/sub{p}_S{S}.npz")[2] for p in range(sch.r)}
     t0 = time.perf_counter()
     fs = [E.build_factor(m, tabs[m.p], S, A=None, sel=None, position="after") for m in models]
     allv = sorted(set(v for f in fs for v in f.vars))

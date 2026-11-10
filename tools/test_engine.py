@@ -5,9 +5,10 @@ T1 exactness: with exact configuration distributions in place of counts (S = 1, 
 T2 plan agreement: every plan of the enumerated space returns the same answer as the brute-force direct point
    evaluator on random marginals / selections (finite-shot tables).
 """
+_RUNS = __import__("os").environ.get("KNITPLAN_RUNS", "D:/runs/knitplan")   # data root
 import itertools, sys
 import numpy as np
-sys.path.insert(0, "D:/runs/knitplan/ext/CutQC"); sys.path.insert(0, ".")
+sys.path.insert(0, _RUNS + "/ext/CutQC"); sys.path.insert(0, ".")
 from qiskit.quantum_info import Statevector
 from helper_functions.benchmarks import generate_circ
 from knitplan.cutting import find_scheme, subcircuits, strip
