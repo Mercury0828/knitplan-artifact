@@ -1,7 +1,7 @@
 # KNITPLAN
 
 Code, workloads and result data for the paper **"KNITPLAN: Support-Aware Query Planning for Circuit-Cutting
-Reconstruction"** (Jiachen Shen, Hui Zhong).
+Reconstruction"** (Jiachen Shen, Hui Zhong). Archived version: [doi:10.5281/zenodo.24122016](https://doi.org/10.5281/zenodo.24122016).
 
 KNITPLAN answers marginal, group-by, bin and point queries over the shot tables of a cut quantum circuit. It treats
 reconstruction as a sum-product (join-aggregate) query: it pushes aggregation and selection below the configuration
