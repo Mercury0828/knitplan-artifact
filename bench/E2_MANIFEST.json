@@ -1,0 +1,629 @@
+{
+ "source": "D:/runs/knitplan/e2/probe.jsonl (bench/e2_probe.py)",
+ "rule": [
+  "",
+  "Rule: status ok (scheme found, <= 1024 configurations per subcircuit); at most 2 instances per (family, r) in probe",
+  "case order; family bv is a control (reported separately, never pooled); ideal shots only (subcircuits up to 30 qubits:",
+  "no exact noisy simulation); budgets S in {1e3, 1e4, 1e5}; dropped if the estimated sampling time exceeds 3 h per",
+  "instance (est_unit_hours_S1e5 from the probe)."
+ ],
+ "instances": [
+  {
+   "id": "adder60r3w24",
+   "family": "adder",
+   "n": 60,
+   "r": 3,
+   "W": 24,
+   "c": 4,
+   "widths": [
+    22,
+    22,
+    20
+   ],
+   "configs": [
+    12,
+    144,
+    12
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "adder72r3w28",
+   "family": "adder",
+   "n": 72,
+   "r": 3,
+   "W": 28,
+   "c": 4,
+   "widths": [
+    26,
+    26,
+    24
+   ],
+   "configs": [
+    12,
+    144,
+    12
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "adder80r4w24",
+   "family": "adder",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 6,
+   "widths": [
+    22,
+    22,
+    22,
+    20
+   ],
+   "configs": [
+    12,
+    144,
+    144,
+    12
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "adder90r4w26",
+   "family": "adder",
+   "n": 90,
+   "r": 4,
+   "W": 26,
+   "c": 6,
+   "widths": [
+    26,
+    24,
+    24,
+    22
+   ],
+   "configs": [
+    12,
+    144,
+    144,
+    12
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "adder100r5w24",
+   "family": "adder",
+   "n": 100,
+   "r": 5,
+   "W": 24,
+   "c": 8,
+   "widths": [
+    22,
+    22,
+    22,
+    22,
+    20
+   ],
+   "configs": [
+    12,
+    144,
+    144,
+    144,
+    12
+   ],
+   "stratum": "E2-r5",
+   "strata": [
+    "E2-r5"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "supremacy_d463r3w24",
+   "family": "supremacy_d4",
+   "n": 63,
+   "r": 3,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    22,
+    19,
+    24
+   ],
+   "configs": [
+    12,
+    1,
+    12
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "supremacy_d472r3w28",
+   "family": "supremacy_d4",
+   "n": 72,
+   "r": 3,
+   "W": 28,
+   "c": 2,
+   "widths": [
+    25,
+    28,
+    21
+   ],
+   "configs": [
+    16,
+    9,
+    1
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "supremacy_d480r4w24",
+   "family": "supremacy_d4",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 5,
+   "widths": [
+    22,
+    21,
+    21,
+    21
+   ],
+   "configs": [
+    48,
+    16,
+    36,
+    9
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "supremacy_d490r4w26",
+   "family": "supremacy_d4",
+   "n": 90,
+   "r": 4,
+   "W": 26,
+   "c": 8,
+   "widths": [
+    24,
+    24,
+    24,
+    26
+   ],
+   "configs": [
+    9,
+    64,
+    729,
+    1024
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "hwea60r3w24",
+   "family": "hwea",
+   "n": 60,
+   "r": 3,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    21,
+    20,
+    21
+   ],
+   "configs": [
+    12,
+    3,
+    4
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "hwea63r3w24",
+   "family": "hwea",
+   "n": 63,
+   "r": 3,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    23,
+    20,
+    22
+   ],
+   "configs": [
+    12,
+    3,
+    4
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "hwea80r4w24",
+   "family": "hwea",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 3,
+   "widths": [
+    23,
+    23,
+    17,
+    20
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "hwea90r4w26",
+   "family": "hwea",
+   "n": 90,
+   "r": 4,
+   "W": 26,
+   "c": 3,
+   "widths": [
+    24,
+    25,
+    19,
+    25
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "hwea100r5w24",
+   "family": "hwea",
+   "n": 100,
+   "r": 5,
+   "W": 24,
+   "c": 4,
+   "widths": [
+    21,
+    23,
+    18,
+    18,
+    24
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    12,
+    4
+   ],
+   "stratum": "E2-r5",
+   "strata": [
+    "E2-r5"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "main"
+  },
+  {
+   "id": "bv60r3w24",
+   "family": "bv",
+   "n": 60,
+   "r": 3,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    21,
+    20,
+    21
+   ],
+   "configs": [
+    12,
+    3,
+    4
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "control"
+  },
+  {
+   "id": "bv63r3w24",
+   "family": "bv",
+   "n": 63,
+   "r": 3,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    23,
+    20,
+    22
+   ],
+   "configs": [
+    12,
+    3,
+    4
+   ],
+   "stratum": "E2-r3",
+   "strata": [
+    "E2-r3"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "control"
+  },
+  {
+   "id": "bv80r4w24",
+   "family": "bv",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 3,
+   "widths": [
+    23,
+    23,
+    17,
+    20
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "control"
+  },
+  {
+   "id": "bv90r4w26",
+   "family": "bv",
+   "n": 90,
+   "r": 4,
+   "W": 26,
+   "c": 3,
+   "widths": [
+    24,
+    25,
+    19,
+    25
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "stratum": "E2-r4",
+   "strata": [
+    "E2-r4"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "control"
+  },
+  {
+   "id": "bv100r5w24",
+   "family": "bv",
+   "n": 100,
+   "r": 5,
+   "W": 24,
+   "c": 4,
+   "widths": [
+    21,
+    23,
+    18,
+    18,
+    24
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    12,
+    4
+   ],
+   "stratum": "E2-r5",
+   "strata": [
+    "E2-r5"
+   ],
+   "noise": [
+    "ideal"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "role": "control"
+  }
+ ]
+}

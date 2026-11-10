@@ -1,0 +1,332 @@
+{
+ "id": "supremacy_d480r4w24",
+ "noise": "ideal",
+ "S": 1000,
+ "query": "marghalf",
+ "A": [
+  2,
+  3,
+  6,
+  8,
+  13,
+  14,
+  15,
+  16,
+  17,
+  20,
+  22,
+  25,
+  26,
+  27,
+  28,
+  30,
+  34,
+  36,
+  38,
+  41,
+  43,
+  44,
+  46,
+  47,
+  48,
+  50,
+  52,
+  53,
+  54,
+  55,
+  59,
+  60,
+  61,
+  62,
+  63,
+  67,
+  69,
+  70,
+  77,
+  78
+ ],
+ "sel": null,
+ "c": 5,
+ "r": 4,
+ "tau_eq_certified": 4.875971626462786e-09,
+ "B": 7776.000000000005,
+ "plan_space_size": 240,
+ "nontrivial": true,
+ "rule_b_total": 60.0,
+ "rule_b_dnf": true,
+ "screened": 28,
+ "unscreened": 209,
+ "screen_seconds": 352.8238546999928,
+ "worker_respawns": 5,
+ "plans": {
+  "before|(((1 2) 3) 0)|DDD|seq": {
+   "dnf": "memory cap: dense 34359738368",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "after|(((1 2) 3) 0)|DDD|seq": {
+   "dnf": "memory cap: dense 34359738368",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((2 3) 0) 1)|DDD|joint": {
+   "dnf": "memory cap: dense 68719476736",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((2 3) 0) 1)|SSS|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|SSS|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DDD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DDD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DDD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SDD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SDD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SDD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 3) 1)|DDD|joint": {
+   "dnf": "memory cap: dense 68719476736",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 3) 1)|DDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DDD|joint": {
+   "dnf": "memory cap: dense 68719476736",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SDD|joint": {
+   "dnf": "memory cap: dense 68719476736",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 3) 2) 1)|DDD|joint": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 3) 2) 1)|DDD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 3) 1)|SDD|joint": {
+   "dnf": "memory cap: dense 68719476736",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 3) 1)|SDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 3) 2) 1)|SDD|joint": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 3) 2) 1)|SDD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DSD|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DSD|seq": {
+   "dnf": "memory cap: sparse output 209930743",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SSD|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SSD|seq": {
+   "dnf": "memory cap: sparse output 200570081",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DSD|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  }
+ },
+ "heuristics": {
+  "a_default_rule": {
+   "plan": "before|(((1 2) 3) 0)|DDD|seq",
+   "total": 60.263706800004,
+   "planning": 0.2637068000040017,
+   "dnf": true
+  },
+  "d_pushdown_after_merge": {
+   "plan": "after|(((1 2) 3) 0)|DDD|seq",
+   "total": 60.263706800004,
+   "planning": 0.2637068000040017,
+   "dnf": true
+  },
+  "b_dense_cutqc_order": {
+   "plan": "before|(((2 3) 0) 1)|DDD|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "c_sparse_cutqc_order": {
+   "plan": "before|(((2 3) 0) 1)|SSS|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "e_dense_optimal_tree": {
+   "plan": "before|((0 2) (1 3))|DDD|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "f_sparse_optimal_tree": {
+   "plan": "before|((0 2) (1 3))|SSS|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  }
+ },
+ "planners": {
+  "v1": {
+   "plan": "before|((0 (1 2)) 3)|DDD|joint",
+   "total": 147.22772190000978,
+   "planning": 87.22772190000978,
+   "dnf": true
+  },
+  "v1_generic": {
+   "plan": "before|((0 (1 2)) 3)|DDD|joint",
+   "total": 60.005498099984834,
+   "planning": 0.005498099984833971,
+   "dnf": true
+  },
+  "v2": {
+   "plan": "before|(((2 3) 0) 1)|SSS|joint",
+   "total": 138.07715369999642,
+   "planning": 78.07715369999642,
+   "dnf": true
+  }
+ },
+ "v1_predicted_cost": 2125.9783669352855,
+ "v2_predicted_cost": 411881.82007517025,
+ "v2_info": {
+  "budget_s": 41188.182007517025,
+  "pred_fallback": 411881.82007517025,
+  "scored": 77,
+  "estimated_unions": 0,
+  "exhausted": true,
+  "infeasible_skipped": 242,
+  "fallback": "c"
+ },
+ "v2_plans_over_reps": [
+  "before|(((2 3) 0) 1)|SSS|joint"
+ ],
+ "best_heuristic": "b_dense_cutqc_order",
+ "load_before": 29.7,
+ "affinity": [
+  6
+ ],
+ "lock_note": "",
+ "best_plan": null,
+ "no_plan_finishes": true,
+ "all_vcheck_pass": true,
+ "load_after": 23.2,
+ "cell_seconds": 1470.0208213999867,
+ "named_keys": [
+  "before|(((1 2) 3) 0)|DDD|seq",
+  "after|(((1 2) 3) 0)|DDD|seq",
+  "before|(((2 3) 0) 1)|DDD|joint",
+  "before|(((2 3) 0) 1)|SSS|joint",
+  "before|((0 2) (1 3))|DDD|joint",
+  "before|((0 2) (1 3))|SSS|joint",
+  "before|((0 (1 2)) 3)|DDD|joint",
+  "before|((0 (1 2)) 3)|DDD|joint",
+  "before|(((2 3) 0) 1)|SSS|joint"
+ ]
+}

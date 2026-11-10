@@ -1,0 +1,45 @@
+{
+ "cells": 144,
+ "vcheck_fail_cells": [],
+ "max_diff_over_tau_cert": 0.0007716049382715976,
+ "tau_cert_over_legacy_range": [
+  0.14337085924526646,
+  2201204.870122747
+ ],
+ "cells_with_zero_answer_mass(W=0)": [
+  "adder20/ideal/S100000/groupby10sel5",
+  "adder20/ideal/S10000/groupby10sel5",
+  "adder20/ideal/S1000/groupby10sel5",
+  "adder20r3/ideal/S100000/groupby10sel5",
+  "adder20r3/ideal/S10000/groupby10sel5",
+  "adder20r3/ideal/S1000/groupby10sel5",
+  "adder30/ideal/S100000/groupby10sel5",
+  "adder30/ideal/S10000/groupby10sel5",
+  "adder30/ideal/S1000/groupby10sel5",
+  "adder30r3/ideal/S100000/groupby10sel5",
+  "adder30r3/ideal/S10000/groupby10sel5",
+  "adder30r3/ideal/S1000/groupby10sel5"
+ ],
+ "steps": 171,
+ "steps_enumerated": 142,
+ "exact_nc_equals_enum_union": true,
+ "steps_with_cancellation(actual<exact)": 18,
+ "predicted_over_exact_gmean": 2.213362860372958,
+ "predicted_over_exact_max": 16.0,
+ "predicted_below_exact_steps": 0,
+ "default_choice_changes": [
+  "adder20/noisy/S100000/groupby10sel5",
+  "adder20/noisy/S100000/marg10",
+  "adder20/noisy/S100000/marg20",
+  "adder20/noisy/S10000/groupby10sel5",
+  "adder20/noisy/S10000/marg10",
+  "adder20/noisy/S1000/groupby10sel5",
+  "adder20/noisy/S1000/marg10",
+  "adder20r3/noisy/S100000/marg20",
+  "adder20r3/noisy/S10000/groupby10sel5",
+  "adder20r3/noisy/S10000/marg20",
+  "adder20r3/noisy/S1000/groupby10sel5",
+  "adder20r3/noisy/S1000/marg20",
+  "adder30r3/ideal/S1000/marg20"
+ ]
+}

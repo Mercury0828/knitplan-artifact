@@ -1,0 +1,203 @@
+{
+ "id": "supremacy_d463r3w24",
+ "noise": "ideal",
+ "S": 1000,
+ "query": "marghalf",
+ "A": [
+  1,
+  3,
+  4,
+  5,
+  12,
+  13,
+  14,
+  16,
+  22,
+  26,
+  27,
+  29,
+  32,
+  34,
+  35,
+  36,
+  37,
+  39,
+  40,
+  41,
+  42,
+  43,
+  45,
+  50,
+  51,
+  54,
+  55,
+  57,
+  59,
+  61,
+  62
+ ],
+ "sel": null,
+ "c": 2,
+ "r": 3,
+ "tau_eq_certified": 1.6147083670148658e-12,
+ "B": 36.00000000000002,
+ "plan_space_size": 8,
+ "nontrivial": true,
+ "rule_b_total": 60.0,
+ "rule_b_dnf": true,
+ "screened": 5,
+ "unscreened": 0,
+ "screen_seconds": 185.74203259998467,
+ "worker_respawns": 5,
+ "plans": {
+  "before|((0 2) 1)|DD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "after|((0 2) 1)|DD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((1 0) 2)|DD|joint": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((1 0) 2)|SS|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) 1)|DD|joint": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) 1)|SS|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) 1)|SD|joint": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) 1)|SD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) 1)|DS|joint": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) 1)|DS|seq": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) 1)|SS|seq": {
+   "dnf": "warm-up > cap 60s (worker killed)",
+   "total": 60.0,
+   "fold": 60.0
+  }
+ },
+ "heuristics": {
+  "a_default_rule": {
+   "plan": "before|((0 2) 1)|DD|seq",
+   "total": 60.4255114000116,
+   "planning": 0.4255114000116009,
+   "dnf": true
+  },
+  "d_pushdown_after_merge": {
+   "plan": "after|((0 2) 1)|DD|seq",
+   "total": 60.4255114000116,
+   "planning": 0.4255114000116009,
+   "dnf": true
+  },
+  "b_dense_cutqc_order": {
+   "plan": "before|((1 0) 2)|DD|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "c_sparse_cutqc_order": {
+   "plan": "before|((1 0) 2)|SS|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "e_dense_optimal_tree": {
+   "plan": "before|((0 2) 1)|DD|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "f_sparse_optimal_tree": {
+   "plan": "before|((0 2) 1)|SS|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  }
+ },
+ "planners": {
+  "v1": {
+   "plan": "before|((0 2) 1)|DD|joint",
+   "total": 60.0721404000069,
+   "planning": 0.07214040000690147,
+   "dnf": true
+  },
+  "v1_generic": {
+   "plan": "before|((0 2) 1)|DD|joint",
+   "total": 60.00021210001432,
+   "planning": 0.00021210001432336867,
+   "dnf": true
+  },
+  "v2": {
+   "plan": "before|((1 0) 2)|SS|joint",
+   "total": 60.92936840001494,
+   "planning": 0.9293684000149369,
+   "dnf": true
+  }
+ },
+ "v1_predicted_cost": 2.1528834597908717,
+ "v2_predicted_cost": 76.23313191376852,
+ "v2_info": {
+  "budget_s": 7.623313191376852,
+  "pred_fallback": 76.23313191376852,
+  "scored": 5,
+  "estimated_unions": 0,
+  "exhausted": true,
+  "infeasible_skipped": 10,
+  "fallback": "c"
+ },
+ "v2_plans_over_reps": [
+  "before|((1 0) 2)|SS|joint"
+ ],
+ "best_heuristic": "b_dense_cutqc_order",
+ "load_before": 78.7,
+ "affinity": [
+  8
+ ],
+ "lock_note": "",
+ "best_plan": null,
+ "no_plan_finishes": true,
+ "all_vcheck_pass": true,
+ "load_after": 41.1,
+ "cell_seconds": 340.41439670001273,
+ "named_keys": [
+  "before|((0 2) 1)|DD|seq",
+  "after|((0 2) 1)|DD|seq",
+  "before|((1 0) 2)|DD|joint",
+  "before|((1 0) 2)|SS|joint",
+  "before|((0 2) 1)|DD|joint",
+  "before|((0 2) 1)|SS|joint",
+  "before|((0 2) 1)|DD|joint",
+  "before|((0 2) 1)|DD|joint",
+  "before|((1 0) 2)|SS|joint"
+ ]
+}

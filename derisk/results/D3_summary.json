@@ -1,0 +1,130 @@
+{
+ "cells": 144,
+ "K_TRIV_share_best_heuristic_within_1.10": 0.9583333333333334,
+ "K_TRIV_fires(>=0.90)": true,
+ "H3_cells_heuristic_>=1.10x_worse": 6,
+ "H3_share": 0.041666666666666664,
+ "H3_gmean_gain_on_those": 1.2244986512494227,
+ "per_rule": {
+  "a_default_rule": {
+   "gmean_ratio": 1.601667882574477,
+   "share_within_1.10": 0.1875,
+   "max_ratio": 4.257860801138216,
+   "dnf_cells": 0
+  },
+  "b_always_dense_pushdown": {
+   "gmean_ratio": 1.0742524892754564,
+   "share_within_1.10": 0.8958333333333334,
+   "max_ratio": 4.374229337414671,
+   "dnf_cells": 0
+  },
+  "c_always_sparse_pushdown_cutqc_order": {
+   "gmean_ratio": 2.5566462429858547,
+   "share_within_1.10": 0.3194444444444444,
+   "max_ratio": 2462.649811484997,
+   "dnf_cells": 27
+  },
+  "d_pushdown_after_merge": {
+   "gmean_ratio": 4.448889600283624,
+   "share_within_1.10": 0.0,
+   "max_ratio": 94.79435448668619,
+   "dnf_cells": 0
+  }
+ },
+ "dense_plan_within_1.10x_of_best_sparse_share": 0.9166666666666666,
+ "cells_where_sparse_beats_dense_by_>10pct": [
+  [
+   "adder20",
+   "ideal",
+   100000,
+   "marg20",
+   3.77
+  ],
+  [
+   "adder20",
+   "ideal",
+   10000,
+   "marg20",
+   3.93
+  ],
+  [
+   "adder20",
+   "ideal",
+   1000,
+   "marg20",
+   3.96
+  ],
+  [
+   "adder20r3",
+   "ideal",
+   100000,
+   "marg20",
+   1.16
+  ],
+  [
+   "adder20r3",
+   "ideal",
+   10000,
+   "marg20",
+   1.23
+  ],
+  [
+   "adder20r3",
+   "ideal",
+   1000,
+   "marg20",
+   1.17
+  ],
+  [
+   "adder30",
+   "ideal",
+   100000,
+   "marg20",
+   3.01
+  ],
+  [
+   "adder30",
+   "ideal",
+   10000,
+   "marg20",
+   3.18
+  ],
+  [
+   "adder30",
+   "ideal",
+   1000,
+   "marg20",
+   2.39
+  ],
+  [
+   "adder30r3",
+   "ideal",
+   100000,
+   "marg20",
+   1.27
+  ],
+  [
+   "adder30r3",
+   "ideal",
+   10000,
+   "marg20",
+   1.18
+  ],
+  [
+   "adder30r3",
+   "ideal",
+   1000,
+   "marg20",
+   1.24
+  ]
+ ],
+ "best_plan_format|position_counts": {
+  "S|before": 12,
+  "D|before": 105,
+  "DD|before": 21,
+  "DS|before": 3,
+  "SS|before": 3
+ },
+ "vcheck_failures": [],
+ "load_before_median": 60.7
+}

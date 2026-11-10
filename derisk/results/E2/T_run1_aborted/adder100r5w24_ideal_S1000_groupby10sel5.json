@@ -1,0 +1,245 @@
+{
+ "id": "adder100r5w24",
+ "noise": "ideal",
+ "S": 1000,
+ "query": "groupby10sel5",
+ "A": [
+  4,
+  12,
+  18,
+  20,
+  21,
+  24,
+  26,
+  63,
+  75,
+  80
+ ],
+ "sel": {
+  "55": 0,
+  "97": 1,
+  "73": 1,
+  "76": 0,
+  "0": 0
+ },
+ "c": 8,
+ "r": 5,
+ "tau_eq_certified": 5e-324,
+ "B": 5e-324,
+ "plan_space_size": 1504,
+ "nontrivial": false,
+ "rule_b_total": 0.08930670001427643,
+ "rule_b_dnf": false,
+ "screened": 0,
+ "unscreened": 0,
+ "screen_seconds": 0.0,
+ "worker_respawns": 0,
+ "plans": {
+  "before|((((2 3) 4) 1) 0)|SSSS|seq": {
+   "fold": 0.00188309999066405,
+   "fold_reps": [
+    0.0019189000013284385,
+    0.00188309999066405,
+    0.0018628000107128173,
+    0.001834000024246052,
+    0.002002499997615814
+   ],
+   "warmup": 0.0022606999846175313,
+   "vcheck_diff": 0.0,
+   "build": 0.08901840000180528,
+   "total": 0.09090149999246933,
+   "vcheck_pass": true
+  },
+  "after|((((2 3) 4) 1) 0)|SSSS|seq": {
+   "fold": 0.0018951999954879284,
+   "fold_reps": [
+    0.00189789998694323,
+    0.0018727999995462596,
+    0.0019196000066585839,
+    0.0018760999955702573,
+    0.0018951999954879284
+   ],
+   "warmup": 0.0019435000140219927,
+   "vcheck_diff": 0.0,
+   "build": 0.08847420001984574,
+   "total": 0.09036940001533367,
+   "vcheck_pass": true
+  },
+  "before|((((4 3) 2) 1) 0)|DDDD|joint": {
+   "fold": 0.00028830001247115433,
+   "fold_reps": [
+    0.0003294000052846968,
+    0.00028830001247115433,
+    0.00028670000028796494,
+    0.0002799999783746898,
+    0.02277070001582615
+   ],
+   "warmup": 0.0005954999942332506,
+   "vcheck_diff": 0.0,
+   "build": 0.08901840000180528,
+   "total": 0.08930670001427643,
+   "vcheck_pass": true
+  },
+  "before|((((4 3) 2) 1) 0)|SSSS|joint": {
+   "fold": 0.000305499997921288,
+   "fold_reps": [
+    0.00031599999056197703,
+    0.00030529999639838934,
+    0.00030519999563694,
+    0.0003127000236418098,
+    0.000305499997921288
+   ],
+   "warmup": 0.0003533000126481056,
+   "vcheck_diff": 0.0,
+   "build": 0.08901840000180528,
+   "total": 0.08932389999972656,
+   "vcheck_pass": true
+  },
+  "before|((0 (2 3)) (1 4))|DDDD|joint": {
+   "fold": 0.0035939000081270933,
+   "fold_reps": [
+    0.0035035999899264425,
+    0.0035939000081270933,
+    0.0038041000079829246,
+    0.003656999993836507,
+    0.0034425999911036342
+   ],
+   "warmup": 0.003929099999368191,
+   "vcheck_diff": 0.0,
+   "build": 0.08901840000180528,
+   "total": 0.09261230000993237,
+   "vcheck_pass": true
+  },
+  "before|((0 (2 3)) (1 4))|SSSS|joint": {
+   "fold": 0.008776000002399087,
+   "fold_reps": [
+    0.009182599984342232,
+    0.008619800006272271,
+    0.008916599996155128,
+    0.008711300004506484,
+    0.008776000002399087
+   ],
+   "warmup": 0.01021709997439757,
+   "vcheck_diff": 0.0,
+   "build": 0.08901840000180528,
+   "total": 0.09779440000420436,
+   "vcheck_pass": true
+  },
+  "before|(0 (1 (2 (3 4))))|SSSS|joint": {
+   "fold": 0.00031400000443682075,
+   "fold_reps": [
+    0.0003074999840464443,
+    0.00031400000443682075,
+    0.0003468999930191785,
+    0.0003176000027451664,
+    0.0003079000161960721
+   ],
+   "warmup": 0.0003704999980982393,
+   "vcheck_diff": 0.0,
+   "build": 0.08901840000180528,
+   "total": 0.0893324000062421,
+   "vcheck_pass": true
+  }
+ },
+ "heuristics": {
+  "a_default_rule": {
+   "plan": "before|((((2 3) 4) 1) 0)|SSSS|seq",
+   "total": 0.159651699999813,
+   "planning": 0.06875020000734366,
+   "dnf": false
+  },
+  "d_pushdown_after_merge": {
+   "plan": "after|((((2 3) 4) 1) 0)|SSSS|seq",
+   "total": 0.15911960002267733,
+   "planning": 0.06875020000734366,
+   "dnf": false
+  },
+  "b_dense_cutqc_order": {
+   "plan": "before|((((4 3) 2) 1) 0)|DDDD|joint",
+   "total": 0.08930670001427643,
+   "planning": 0.0,
+   "dnf": false
+  },
+  "c_sparse_cutqc_order": {
+   "plan": "before|((((4 3) 2) 1) 0)|SSSS|joint",
+   "total": 0.08932389999972656,
+   "planning": 0.0,
+   "dnf": false
+  },
+  "e_dense_optimal_tree": {
+   "plan": "before|((0 (2 3)) (1 4))|DDDD|joint",
+   "total": 0.09261230000993237,
+   "planning": 0.0,
+   "dnf": false
+  },
+  "f_sparse_optimal_tree": {
+   "plan": "before|((0 (2 3)) (1 4))|SSSS|joint",
+   "total": 0.09779440000420436,
+   "planning": 0.0,
+   "dnf": false
+  }
+ },
+ "planners": {
+  "v1": {
+   "plan": "before|(0 (1 (2 (3 4))))|SSSS|joint",
+   "total": 0.1686092000163626,
+   "planning": 0.0792768000101205,
+   "dnf": false
+  },
+  "v1_generic": {
+   "plan": "before|(0 (1 (2 (3 4))))|SSSS|joint",
+   "total": 0.16434200000367127,
+   "planning": 0.07500959999742918,
+   "dnf": false
+  },
+  "v2": {
+   "plan": "before|((((4 3) 2) 1) 0)|DDDD|joint",
+   "total": 0.0904496000148356,
+   "planning": 0.001142900000559166,
+   "dnf": false
+  }
+ },
+ "v1_predicted_cost": 5.1513148806122704e-05,
+ "v2_predicted_cost": 5.5963733436350864e-05,
+ "v2_info": {
+  "budget_s": 5.5963733436350865e-06,
+  "pred_fallback": 5.5963733436350864e-05,
+  "scored": 0,
+  "estimated_unions": 0,
+  "exhausted": false,
+  "infeasible_skipped": 0,
+  "fallback": "b"
+ },
+ "v2_plans_over_reps": [
+  "before|((((4 3) 2) 1) 0)|DDDD|joint"
+ ],
+ "best_heuristic": "b_dense_cutqc_order",
+ "load_before": 66.4,
+ "affinity": [
+  6
+ ],
+ "lock_note": "",
+ "best_plan": "before|(0 (1 (2 (3 4))))|SSSS|joint",
+ "best_total": 0.0893324000062421,
+ "ratio_best_heuristic_over_best": 0.9997123105170814,
+ "ratio_v1_over_best": 1.887436137443761,
+ "ratio_v1_generic_over_best": 1.8396684740607874,
+ "ratio_v2_over_best": 1.0125061009053316,
+ "ratio_v1_over_best_heuristic": 1.8879792892292402,
+ "ratio_v1_generic_over_best_heuristic": 1.840197879637248,
+ "ratio_v2_over_best_heuristic": 1.0127974720863773,
+ "all_vcheck_pass": true,
+ "load_after": 42.9,
+ "cell_seconds": 5.917537100001937,
+ "named_keys": [
+  "before|((((2 3) 4) 1) 0)|SSSS|seq",
+  "after|((((2 3) 4) 1) 0)|SSSS|seq",
+  "before|((((4 3) 2) 1) 0)|DDDD|joint",
+  "before|((((4 3) 2) 1) 0)|SSSS|joint",
+  "before|((0 (2 3)) (1 4))|DDDD|joint",
+  "before|((0 (2 3)) (1 4))|SSSS|joint",
+  "before|(0 (1 (2 (3 4))))|SSSS|joint",
+  "before|(0 (1 (2 (3 4))))|SSSS|joint",
+  "before|((((4 3) 2) 1) 0)|DDDD|joint"
+ ]
+}

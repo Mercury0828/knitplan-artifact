@@ -1,0 +1,1421 @@
+{
+ "id": "adder80r4w24",
+ "noise": "ideal",
+ "S": 1000,
+ "query": "marghalf",
+ "A": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  6,
+  10,
+  12,
+  14,
+  17,
+  18,
+  19,
+  23,
+  24,
+  26,
+  30,
+  31,
+  33,
+  35,
+  36,
+  37,
+  38,
+  40,
+  42,
+  44,
+  45,
+  47,
+  48,
+  52,
+  54,
+  55,
+  56,
+  60,
+  61,
+  63,
+  65,
+  69,
+  70,
+  74,
+  75
+ ],
+ "sel": null,
+ "c": 6,
+ "r": 4,
+ "tau_eq_certified": 5.5300148460479343e-08,
+ "B": 46656.00000000003,
+ "plan_space_size": 176,
+ "nontrivial": true,
+ "rule_b_total": 60.0,
+ "rule_b_dnf": true,
+ "screened": 173,
+ "unscreened": 0,
+ "screen_seconds": 152.18814260000363,
+ "worker_respawns": 0,
+ "plans": {
+  "before|(((2 3) 1) 0)|SSS|seq": {
+   "fold": 0.005116200016345829,
+   "fold_reps": [
+    0.007121400005416945,
+    0.005116200016345829,
+    0.004918200022075325,
+    0.004975899995770305,
+    0.005313899979228154
+   ],
+   "warmup": 0.005237300007138401,
+   "vcheck_diff": 0.0,
+   "build": 0.03359079998335801,
+   "total": 0.03870699999970384,
+   "vcheck_pass": true
+  },
+  "after|(((2 3) 1) 0)|SSS|seq": {
+   "fold": 0.005173300014575943,
+   "fold_reps": [
+    0.007055800000671297,
+    0.0047491000150330365,
+    0.004743199999211356,
+    0.005173300014575943,
+    0.006821899994974956
+   ],
+   "warmup": 0.007180099986726418,
+   "vcheck_diff": 3.0357660829594124e-18,
+   "build": 0.04832199998782016,
+   "total": 0.05349530000239611,
+   "vcheck_pass": true
+  },
+  "before|(((3 2) 1) 0)|DDD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((3 2) 1) 0)|SSS|joint": {
+   "fold": 0.0033390999888069928,
+   "fold_reps": [
+    0.003262100013671443,
+    0.004074299999047071,
+    0.003888599982019514,
+    0.0033288999984506518,
+    0.0033390999888069928
+   ],
+   "warmup": 0.003593200002796948,
+   "vcheck_diff": 4.440892098500626e-16,
+   "build": 0.03359079998335801,
+   "total": 0.036929899972165,
+   "vcheck_pass": true
+  },
+  "before|((0 2) (1 3))|DDD|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|SSS|joint": {
+   "fold": 0.2100393000000622,
+   "fold_reps": [
+    0.22895439999410883,
+    0.21433999997680075,
+    0.2100393000000622,
+    0.18391910000354983,
+    0.17404790001455694
+   ],
+   "warmup": 0.20589780001319014,
+   "vcheck_diff": 5.773159728050814e-15,
+   "build": 0.03359079998335801,
+   "total": 0.24363009998342022,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|SSS|joint": {
+   "fold": 0.003231499984394759,
+   "fold_reps": [
+    0.00462699998752214,
+    0.003186200017808005,
+    0.0031928000098560005,
+    0.003272600006312132,
+    0.003231499984394759
+   ],
+   "warmup": 0.0032860000210348517,
+   "vcheck_diff": 4.440892098500626e-16,
+   "build": 0.03359079998335801,
+   "total": 0.03682229996775277,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|SSS|seq": {
+   "fold": 0.0046894999977666885,
+   "fold_reps": [
+    0.006091399991419166,
+    0.004727899999124929,
+    0.0046894999977666885,
+    0.0046070000098552555,
+    0.004575600003590807
+   ],
+   "warmup": 0.005351100000552833,
+   "vcheck_diff": 1.1752751549742868e-16,
+   "build": 0.03359079998335801,
+   "total": 0.0382802999811247,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 2) 3)|SSS|joint": {
+   "fold": 0.003262599988374859,
+   "fold_reps": [
+    0.003327100013848394,
+    0.003752299991901964,
+    0.0032356999872718006,
+    0.0031358000123873353,
+    0.003262599988374859
+   ],
+   "warmup": 0.003372900013346225,
+   "vcheck_diff": 1.7932703932910243e-16,
+   "build": 0.03359079998335801,
+   "total": 0.03685339997173287,
+   "vcheck_pass": true
+  },
+  "before|(0 (1 (2 3)))|SSS|joint": {
+   "fold": 0.0035127000010106713,
+   "fold_reps": [
+    0.003462000022409484,
+    0.0033248999970965087,
+    0.004191699990769848,
+    0.003580299991881475,
+    0.0035127000010106713
+   ],
+   "warmup": 0.003552099980879575,
+   "vcheck_diff": 4.440892098500626e-16,
+   "build": 0.03359079998335801,
+   "total": 0.03710349998436868,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 2) 3)|SSS|seq": {
+   "fold": 0.004807199991773814,
+   "fold_reps": [
+    0.004952199989929795,
+    0.004807199991773814,
+    0.004673899995395914,
+    0.004753999994136393,
+    0.004948200017679483
+   ],
+   "warmup": 0.004889500007266179,
+   "vcheck_diff": 2.220446049250313e-16,
+   "build": 0.03359079998335801,
+   "total": 0.038397999975131825,
+   "vcheck_pass": true
+  },
+  "before|(0 (1 (2 3)))|SSS|seq": {
+   "fold": 0.005085300013888627,
+   "fold_reps": [
+    0.005115000007208437,
+    0.005085300013888627,
+    0.005061000003479421,
+    0.0052328000019770116,
+    0.004974799987394363
+   ],
+   "warmup": 0.0051229000091552734,
+   "vcheck_diff": 0.0,
+   "build": 0.03359079998335801,
+   "total": 0.03867609999724664,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 3) 2)|SSS|joint": {
+   "fold": 0.007343900011619553,
+   "fold_reps": [
+    0.007330799999181181,
+    0.007343900011619553,
+    0.0071743000007700175,
+    0.008312299993121997,
+    0.008150899986503646
+   ],
+   "warmup": 0.007595400005811825,
+   "vcheck_diff": 3.194059600142296e-16,
+   "build": 0.03359079998335801,
+   "total": 0.040934699994977564,
+   "vcheck_pass": true
+  },
+  "before|((0 (2 3)) 1)|SSS|joint": {
+   "fold": 0.008678800018969923,
+   "fold_reps": [
+    0.007633299974258989,
+    0.0074871999968308955,
+    0.012012699997285381,
+    0.013755899999523535,
+    0.008678800018969923
+   ],
+   "warmup": 0.007397299981676042,
+   "vcheck_diff": 1.1102230246251565e-15,
+   "build": 0.03359079998335801,
+   "total": 0.042269600002327934,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 3) 2)|SSS|seq": {
+   "fold": 0.009216900012688711,
+   "fold_reps": [
+    0.010382600012235343,
+    0.009273899981053546,
+    0.009172999998554587,
+    0.009216900012688711,
+    0.008965800021542236
+   ],
+   "warmup": 0.009261700004572049,
+   "vcheck_diff": 2.220446049250313e-16,
+   "build": 0.03359079998335801,
+   "total": 0.04280769999604672,
+   "vcheck_pass": true
+  },
+  "before|((0 (2 3)) 1)|SSS|seq": {
+   "fold": 0.009250900009647012,
+   "fold_reps": [
+    0.009250900009647012,
+    0.008897799998521805,
+    0.0094348999846261,
+    0.009428199991816655,
+    0.008928299997933209
+   ],
+   "warmup": 0.01190610000048764,
+   "vcheck_diff": 8.977193988179977e-17,
+   "build": 0.03359079998335801,
+   "total": 0.04284169999300502,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|SDS|joint": {
+   "fold": 0.022827599983429536,
+   "fold_reps": [
+    0.02427170000737533,
+    0.019733799999812618,
+    0.023839899979066104,
+    0.0199066000059247,
+    0.022827599983429536
+   ],
+   "warmup": 0.02375029999529943,
+   "vcheck_diff": 4.440892098500626e-16,
+   "build": 0.03359079998335801,
+   "total": 0.05641839996678755,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|SDS|seq": {
+   "fold": 0.05729260001680814,
+   "fold_reps": [
+    0.05833819997496903,
+    0.05729260001680814,
+    0.056175599980633706,
+    0.058235200005583465,
+    0.05713159998413175
+   ],
+   "warmup": 0.06194730001152493,
+   "vcheck_diff": 1.1752751549742868e-16,
+   "build": 0.03359079998335801,
+   "total": 0.09088340000016615,
+   "vcheck_pass": true
+  },
+  "before|(0 (1 (2 3)))|DSS|joint": {
+   "fold": 0.019557700026780367,
+   "fold_reps": [
+    0.01905770000303164,
+    0.019126500003039837,
+    0.02033369999844581,
+    0.019557700026780367,
+    0.019705800019437447
+   ],
+   "warmup": 0.018691400007810444,
+   "vcheck_diff": 4.440892098500626e-16,
+   "build": 0.03359079998335801,
+   "total": 0.05314850001013838,
+   "vcheck_pass": true
+  },
+  "before|(0 (1 (2 3)))|DSS|seq": {
+   "fold": 0.064997300010873,
+   "fold_reps": [
+    0.06604249999509193,
+    0.064997300010873,
+    0.05625040002632886,
+    0.0652369000017643,
+    0.06169390000286512
+   ],
+   "warmup": 0.05673989999922924,
+   "vcheck_diff": 4.336808689942018e-19,
+   "build": 0.03359079998335801,
+   "total": 0.09858809999423102,
+   "vcheck_pass": true
+  },
+  "before|((0 (2 3)) 1)|DSS|joint": {
+   "fold": 0.025226400000974536,
+   "fold_reps": [
+    0.030512800003634766,
+    0.02475459998822771,
+    0.027855199994519353,
+    0.025226400000974536,
+    0.024336000002222136
+   ],
+   "warmup": 0.02729399999952875,
+   "vcheck_diff": 1.1102230246251565e-15,
+   "build": 0.03359079998335801,
+   "total": 0.05881719998433255,
+   "vcheck_pass": true
+  },
+  "before|((0 (2 3)) 1)|DSS|seq": {
+   "fold": 0.06788410001900047,
+   "fold_reps": [
+    0.06809769998653792,
+    0.06788410001900047,
+    0.06475479999789968,
+    0.0757271999900695,
+    0.06391580001218244
+   ],
+   "warmup": 0.06690659999730997,
+   "vcheck_diff": 8.977193988179977e-17,
+   "build": 0.03359079998335801,
+   "total": 0.10147490000235848,
+   "vcheck_pass": true
+  },
+  "before|(0 ((1 2) 3))|SSS|joint": {
+   "fold": 0.03409289999399334,
+   "fold_reps": [
+    0.03266930000972934,
+    0.03670369999599643,
+    0.03519689998938702,
+    0.029561600007582456,
+    0.03409289999399334
+   ],
+   "warmup": 0.03241280000656843,
+   "vcheck_diff": 1.5241172039714979e-16,
+   "build": 0.03359079998335801,
+   "total": 0.06768369997735135,
+   "vcheck_pass": true
+  },
+  "before|((0 (1 2)) 3)|SSS|joint": {
+   "fold": 0.031275699991965666,
+   "fold_reps": [
+    0.03432179999072105,
+    0.02932080000755377,
+    0.031275699991965666,
+    0.042768499988596886,
+    0.027667100017424673
+   ],
+   "warmup": 0.028026299987686798,
+   "vcheck_diff": 1.3617579286417936e-16,
+   "build": 0.03359079998335801,
+   "total": 0.06486649997532368,
+   "vcheck_pass": true
+  },
+  "before|(0 ((1 2) 3))|SSS|seq": {
+   "fold": 0.04848859997582622,
+   "fold_reps": [
+    0.042097800003830343,
+    0.0470709000073839,
+    0.04879319999599829,
+    0.05167960000107996,
+    0.04848859997582622
+   ],
+   "warmup": 0.04174559999955818,
+   "vcheck_diff": 1.1080546202801855e-16,
+   "build": 0.03359079998335801,
+   "total": 0.08207939995918423,
+   "vcheck_pass": true
+  },
+  "before|((0 (1 2)) 3)|SSS|seq": {
+   "fold": 0.05178799998247996,
+   "fold_reps": [
+    0.05178799998247996,
+    0.05233050000970252,
+    0.04523909999988973,
+    0.04814919998170808,
+    0.06489130001864396
+   ],
+   "warmup": 0.05011120002018288,
+   "vcheck_diff": 2.220446049250313e-16,
+   "build": 0.03359079998335801,
+   "total": 0.08537879996583797,
+   "vcheck_pass": true
+  },
+  "before|((0 3) (1 2))|SSS|joint": {
+   "fold": 0.03414609999163076,
+   "fold_reps": [
+    0.03707900000154041,
+    0.03311419999226928,
+    0.0326338000013493,
+    0.03414609999163076,
+    0.03940790001070127
+   ],
+   "warmup": 0.03509339998709038,
+   "vcheck_diff": 5.401495223322783e-16,
+   "build": 0.03359079998335801,
+   "total": 0.06773689997498877,
+   "vcheck_pass": true
+  },
+  "before|((0 3) (1 2))|SSS|seq": {
+   "fold": 0.0526743000082206,
+   "fold_reps": [
+    0.05294369999319315,
+    0.053460199997061864,
+    0.05062780002481304,
+    0.04552340001100674,
+    0.0526743000082206
+   ],
+   "warmup": 0.049714699998730794,
+   "vcheck_diff": 2.220446049250313e-16,
+   "build": 0.03359079998335801,
+   "total": 0.08626509999157861,
+   "vcheck_pass": true
+  },
+  "before|(((0 2) 1) 3)|SSS|joint": {
+   "fold": 0.11819589999504387,
+   "fold_reps": [
+    0.13247880002018064,
+    0.11819589999504387,
+    0.12982639999245293,
+    0.1083327999804169,
+    0.11682230001315475
+   ],
+   "warmup": 0.11179329999140464,
+   "vcheck_diff": 2.3830763751231387e-16,
+   "build": 0.03359079998335801,
+   "total": 0.15178669997840188,
+   "vcheck_pass": true
+  },
+  "before|(((0 2) 1) 3)|SSS|seq": {
+   "fold": 0.1300829999963753,
+   "fold_reps": [
+    0.1300829999963753,
+    0.1382189999858383,
+    0.12119239999447018,
+    0.13051550000091083,
+    0.116131899994798
+   ],
+   "warmup": 0.11828100000275299,
+   "vcheck_diff": 2.2898349882893854e-16,
+   "build": 0.03359079998335801,
+   "total": 0.1636737999797333,
+   "vcheck_pass": true
+  },
+  "before|(0 ((1 3) 2))|SSS|joint": {
+   "fold": 0.10334629999124445,
+   "fold_reps": [
+    0.09230790002038702,
+    0.11610519999521784,
+    0.10334629999124445,
+    0.10036979999858886,
+    0.10479599999962375
+   ],
+   "warmup": 0.09482470000511967,
+   "vcheck_diff": 6.661338147750939e-16,
+   "build": 0.03359079998335801,
+   "total": 0.13693709997460246,
+   "vcheck_pass": true
+  },
+  "before|(0 ((1 3) 2))|SSS|seq": {
+   "fold": 0.12006390001624823,
+   "fold_reps": [
+    0.15170820002094842,
+    0.12791519999154843,
+    0.1156800999888219,
+    0.12006390001624823,
+    0.11052030001883395
+   ],
+   "warmup": 0.11943210000754334,
+   "vcheck_diff": 1.1080546202801855e-16,
+   "build": 0.03359079998335801,
+   "total": 0.15365469999960624,
+   "vcheck_pass": true
+  },
+  "before|((0 2) (1 3))|SSS|seq": {
+   "pruned_warmup": 0.1895764000073541,
+   "fold": 0.1895764000073541,
+   "vcheck_diff": 2.2898349882893854e-16,
+   "build": 0.03359079998335801,
+   "total": 0.2231671999907121,
+   "vcheck_pass": true
+  },
+  "before|((0 3) (1 2))|DSS|joint": {
+   "pruned_warmup": 0.6163857000065036,
+   "fold": 0.6163857000065036,
+   "vcheck_diff": 5.401495223322783e-16,
+   "build": 0.03359079998335801,
+   "total": 0.6499764999898616,
+   "vcheck_pass": true
+  },
+  "before|((0 3) (1 2))|DSS|seq": {
+   "pruned_warmup": 0.6819996999984141,
+   "fold": 0.6819996999984141,
+   "vcheck_diff": 2.220446049250313e-16,
+   "build": 0.03359079998335801,
+   "total": 0.7155904999817722,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|DSS|joint": {
+   "pruned_warmup": 0.7945165999990422,
+   "fold": 0.7945165999990422,
+   "vcheck_diff": 4.440892098500626e-16,
+   "build": 0.03359079998335801,
+   "total": 0.8281073999824002,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|DSS|seq": {
+   "pruned_warmup": 4.701424200000474,
+   "fold": 4.701424200000474,
+   "vcheck_diff": 1.1796119636642288e-16,
+   "build": 0.03359079998335801,
+   "total": 4.735014999983832,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 2) 3)|DSS|joint": {
+   "pruned_warmup": 0.801651599991601,
+   "fold": 0.801651599991601,
+   "vcheck_diff": 1.7932703932910243e-16,
+   "build": 0.03359079998335801,
+   "total": 0.835242399974959,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 2) 3)|DSS|seq": {
+   "pruned_warmup": 2.9845763000193983,
+   "fold": 2.9845763000193983,
+   "vcheck_diff": 2.220446049250313e-16,
+   "build": 0.03359079998335801,
+   "total": 3.0181671000027563,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 3) 2)|DSS|joint": {
+   "pruned_warmup": 0.8253010000044014,
+   "fold": 0.8253010000044014,
+   "vcheck_diff": 3.194059600142296e-16,
+   "build": 0.03359079998335801,
+   "total": 0.8588917999877594,
+   "vcheck_pass": true
+  },
+  "before|(((0 1) 3) 2)|DSS|seq": {
+   "pruned_warmup": 2.79573299997719,
+   "fold": 2.79573299997719,
+   "vcheck_diff": 2.220446049250313e-16,
+   "build": 0.03359079998335801,
+   "total": 2.829323799960548,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|DDS|joint": {
+   "pruned_warmup": 0.8280658999865409,
+   "fold": 0.8280658999865409,
+   "vcheck_diff": 4.440892098500626e-16,
+   "build": 0.03359079998335801,
+   "total": 0.8616566999698989,
+   "vcheck_pass": true
+  },
+  "before|((0 1) (2 3))|DDS|seq": {
+   "pruned_warmup": 2.9409232000180054,
+   "fold": 2.9409232000180054,
+   "vcheck_diff": 1.1796119636642288e-16,
+   "build": 0.03359079998335801,
+   "total": 2.9745140000013635,
+   "vcheck_pass": true
+  },
+  "before|(0 ((1 2) 3))|DSS|joint": {
+   "pruned_warmup": 4.801029099995503,
+   "fold": 4.801029099995503,
+   "vcheck_diff": 1.5241172039714979e-16,
+   "build": 0.03359079998335801,
+   "total": 4.834619899978861,
+   "vcheck_pass": true
+  },
+  "before|((0 (1 2)) 3)|DSS|joint": {
+   "pruned_warmup": 4.669897800020408,
+   "fold": 4.669897800020408,
+   "vcheck_diff": 1.3682631416767066e-16,
+   "build": 0.03359079998335801,
+   "total": 4.703488600003766,
+   "vcheck_pass": true
+  },
+  "before|(0 ((1 2) 3))|DSS|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DSS|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|SDS|joint": {
+   "pruned_warmup": 4.810490600008052,
+   "fold": 4.810490600008052,
+   "vcheck_diff": 5.960943544325303e-16,
+   "build": 0.03359079998335801,
+   "total": 4.84408139999141,
+   "vcheck_pass": true
+  },
+  "before|((0 3) (1 2))|SDS|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|DDS|joint": {
+   "pruned_warmup": 5.271748899976956,
+   "fold": 5.271748899976956,
+   "vcheck_diff": 5.960943544325303e-16,
+   "build": 0.03359079998335801,
+   "total": 5.305339699960314,
+   "vcheck_pass": true
+  },
+  "before|((0 3) (1 2))|DDS|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|DSS|joint": {
+   "pruned_warmup": 5.0772455999976955,
+   "fold": 5.0772455999976955,
+   "vcheck_diff": 6.661338147750939e-16,
+   "build": 0.03359079998335801,
+   "total": 5.1108363999810535,
+   "vcheck_pass": true
+  },
+  "before|(0 ((1 3) 2))|DSS|seq": {
+   "pruned_warmup": 5.145604799996363,
+   "fold": 5.145604799996363,
+   "vcheck_diff": 1.1080546202801855e-16,
+   "build": 0.03359079998335801,
+   "total": 5.179195599979721,
+   "vcheck_pass": true
+  },
+  "before|((0 2) (1 3))|SDS|joint": {
+   "pruned_warmup": 5.119630899978802,
+   "fold": 5.119630899978802,
+   "vcheck_diff": 5.773159728050814e-15,
+   "build": 0.03359079998335801,
+   "total": 5.15322169996216,
+   "vcheck_pass": true
+  },
+  "before|((0 2) (1 3))|SDS|seq": {
+   "pruned_warmup": 5.360373900010018,
+   "fold": 5.360373900010018,
+   "vcheck_diff": 2.2898349882893854e-16,
+   "build": 0.03359079998335801,
+   "total": 5.393964699993376,
+   "vcheck_pass": true
+  },
+  "before|(0 (1 (2 3)))|SDS|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|SDS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|DDS|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|DDS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|SDS|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|SDS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|DDS|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|DDS|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DSS|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DSS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DSS|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DSS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|SDS|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|SDS|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|DDS|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|DDS|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DDS|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DDS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SDS|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SDS|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DDS|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DDS|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SDS|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SDS|seq": {
+   "dnf": "memory cap: dense 549755813888",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SDS|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SDS|seq": {
+   "dnf": "memory cap: dense 549755813888",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DDS|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DDS|seq": {
+   "dnf": "memory cap: dense 549755813888",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DDS|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DDS|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|SDS|joint": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|SDS|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|DDS|joint": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|DDS|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|SSD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SSD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|SSD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|SSD|seq": {
+   "dnf": "memory cap: dense 4398046511104",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SSD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|SSD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|SDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|SDD|seq": {
+   "dnf": "memory cap: dense 4398046511104",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|DSD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|DSD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|SSD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SSD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|SSD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SSD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SSD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SSD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|SSD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|SSD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|DSD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|DSD|seq": {
+   "dnf": "memory cap: dense 4398046511104",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|DDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 1) (2 3))|DDD|seq": {
+   "dnf": "memory cap: dense 4398046511104",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DSD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DSD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|DSD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DSD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|DSD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DSD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|DSD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|DSD|seq": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|SDD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|SDD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|DDD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 (1 (2 3)))|DDD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|SDD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|SDD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|DDD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 2) 3))|DDD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|SDD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|SDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|DDD|joint": {
+   "dnf": "memory cap: dense 4294967296",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(0 ((1 3) 2))|DDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DSD|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DSD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SDD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|SDD|seq": {
+   "dnf": "memory cap: dense 549755813888",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SDD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|SDD|seq": {
+   "dnf": "memory cap: dense 549755813888",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DDD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 2) 3)|DDD|seq": {
+   "dnf": "memory cap: dense 549755813888",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DDD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (1 2)) 3)|DDD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SDS|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SDS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DDS|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DDS|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SDD|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|SDD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DDD|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 2) 1) 3)|DDD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SSD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|SSD|joint": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SSD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|SSD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DSD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DSD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|SSD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|SSD|seq": {
+   "dnf": "memory cap: dense 70368744177664",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|DSD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|DSD|seq": {
+   "dnf": "memory cap: dense 70368744177664",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|DSD|joint": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|DSD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|SDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|SDD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|DDD|joint": {
+   "dnf": "memory cap: dense 1099511627776",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 3) (1 2))|DDD|seq": {
+   "dnf": "memory cap: dense 2147483648",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SDD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|SDD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DDD|joint": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 (2 3)) 1)|DDD|seq": {
+   "dnf": "memory cap: dense 137438953472",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|SDD|joint": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|SDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|DDD|joint": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|(((0 1) 3) 2)|DDD|seq": {
+   "dnf": "memory cap: dense 274877906944",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|SSD|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|SSD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|SDD|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|SDD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DSD|joint": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DSD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  },
+  "before|((0 2) (1 3))|DDD|seq": {
+   "dnf": "memory cap: dense 17179869184",
+   "total": 60.0,
+   "fold": 60.0
+  }
+ },
+ "heuristics": {
+  "a_default_rule": {
+   "plan": "before|(((2 3) 1) 0)|SSS|seq",
+   "total": 0.06791360001079738,
+   "planning": 0.029206600011093542,
+   "dnf": false
+  },
+  "d_pushdown_after_merge": {
+   "plan": "after|(((2 3) 1) 0)|SSS|seq",
+   "total": 0.08270190001348965,
+   "planning": 0.029206600011093542,
+   "dnf": false
+  },
+  "b_dense_cutqc_order": {
+   "plan": "before|(((3 2) 1) 0)|DDD|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "c_sparse_cutqc_order": {
+   "plan": "before|(((3 2) 1) 0)|SSS|joint",
+   "total": 0.036929899972165,
+   "planning": 0.0,
+   "dnf": false
+  },
+  "e_dense_optimal_tree": {
+   "plan": "before|((0 2) (1 3))|DDD|joint",
+   "total": 60.0,
+   "planning": 0.0,
+   "dnf": true
+  },
+  "f_sparse_optimal_tree": {
+   "plan": "before|((0 2) (1 3))|SSS|joint",
+   "total": 0.24363009998342022,
+   "planning": 0.0,
+   "dnf": false
+  }
+ },
+ "planners": {
+  "v1": {
+   "plan": "before|((0 1) (2 3))|SSS|joint",
+   "total": 0.06750799997826107,
+   "planning": 0.0306857000105083,
+   "dnf": false
+  },
+  "v1_generic": {
+   "plan": "before|((0 1) (2 3))|SSS|joint",
+   "total": 0.04238839994650334,
+   "planning": 0.005566099978750572,
+   "dnf": false
+  },
+  "v2": {
+   "plan": "before|(((3 2) 1) 0)|SSS|joint",
+   "total": 0.037946099968394265,
+   "planning": 0.0010161999962292612,
+   "dnf": false
+  }
+ },
+ "v1_predicted_cost": 0.004252764248882848,
+ "v2_predicted_cost": 0.007202290948098236,
+ "v2_info": {
+  "budget_s": 0.0007202290948098237,
+  "pred_fallback": 0.007202290948098236,
+  "scored": 0,
+  "estimated_unions": 0,
+  "exhausted": false,
+  "infeasible_skipped": 0,
+  "fallback": "c"
+ },
+ "v2_plans_over_reps": [
+  "before|(((3 2) 1) 0)|SSS|joint"
+ ],
+ "best_heuristic": "c_sparse_cutqc_order",
+ "load_before": 48.6,
+ "affinity": [
+  8
+ ],
+ "lock_note": "",
+ "best_plan": "before|((0 1) (2 3))|SSS|joint",
+ "best_total": 0.03682229996775277,
+ "ratio_best_heuristic_over_best": 1.0029221424111603,
+ "ratio_v1_over_best": 1.8333455552038136,
+ "ratio_v1_generic_over_best": 1.1511611165957885,
+ "ratio_v2_over_best": 1.0305195493390056,
+ "ratio_v1_over_best_heuristic": 1.8280038675746089,
+ "ratio_v1_generic_over_best_heuristic": 1.1478070609032938,
+ "ratio_v2_over_best_heuristic": 1.0275169983399683,
+ "all_vcheck_pass": true,
+ "load_after": 75.7,
+ "cell_seconds": 158.68301530001918,
+ "named_keys": [
+  "before|(((2 3) 1) 0)|SSS|seq",
+  "after|(((2 3) 1) 0)|SSS|seq",
+  "before|(((3 2) 1) 0)|DDD|joint",
+  "before|(((3 2) 1) 0)|SSS|joint",
+  "before|((0 2) (1 3))|DDD|joint",
+  "before|((0 2) (1 3))|SSS|joint",
+  "before|((0 1) (2 3))|SSS|joint",
+  "before|((0 1) (2 3))|SSS|joint",
+  "before|(((3 2) 1) 0)|SSS|joint"
+ ]
+}

@@ -1,0 +1,3230 @@
+{
+ "rule": "Freeze the main-workload instance list (the pre-registered protocol) from the M1 probe, by a rule fixed before any main shot:\n\n  candidate = one row of D:/runs/knitplan/m1/probe.jsonl (bench/m1_probe.py: MQT Bench families + CutQC families with\n              generator seed 2, shapes (n, r, W) with n in {20, 30, 40, 60, 80}, W <= 24, plus the wide-subcircuit\n              stratum of the wide-subcircuit stratum: (60, 2, 34), (80, 2, 40), (80, 3, 30), MPS shots above 24 qubits)\n  include iff  status == ok  (a cut scheme exists with every subcircuit <= W qubits and <= 1024 configurations)\n          and  c >= 1        (at least one cut; c = 0 means there is nothing to reconstruct)\n          and  est_unit_hours_S1e5 <= 2.0   (ideal shot generation of the instance on one core, probe estimate)\n          and  the (circuit, scheme) pair is not identical to an E1 / E2 instance with the same id (E1 / E2 are the\n               development and screening sets of the planner)\n  every included instance: noise in {ideal, noisy (Entry 7a method)}, S in {10^3, 10^4, 10^5}.\nEvery excluded candidate is listed with its reason in the manifest (nothing is dropped silently).",
+ "probe": "D:\\runs\\knitplan\\m1\\probe.jsonl",
+ "instances": [
+  {
+   "id": "ghz20r2w12",
+   "family": "ghz",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 1,
+   "widths": [
+    11,
+    10
+   ],
+   "configs": [
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz30r2w18",
+   "family": "ghz",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 1,
+   "widths": [
+    14,
+    17
+   ],
+   "configs": [
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz30r3w12",
+   "family": "ghz",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    10,
+    12,
+    10
+   ],
+   "configs": [
+    12,
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz40r2w24",
+   "family": "ghz",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 1,
+   "widths": [
+    22,
+    19
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz40r3w16",
+   "family": "ghz",
+   "n": 40,
+   "r": 3,
+   "W": 16,
+   "c": 2,
+   "widths": [
+    15,
+    13,
+    14
+   ],
+   "configs": [
+    4,
+    12,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz40r4w12",
+   "family": "ghz",
+   "n": 40,
+   "r": 4,
+   "W": 12,
+   "c": 3,
+   "widths": [
+    10,
+    10,
+    12,
+    11
+   ],
+   "configs": [
+    12,
+    12,
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz60r3w24",
+   "family": "ghz",
+   "n": 60,
+   "r": 3,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    23,
+    21,
+    18
+   ],
+   "configs": [
+    4,
+    12,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.02,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz60r4w18",
+   "family": "ghz",
+   "n": 60,
+   "r": 4,
+   "W": 18,
+   "c": 3,
+   "widths": [
+    17,
+    16,
+    17,
+    13
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz80r4w24",
+   "family": "ghz",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 3,
+   "widths": [
+    17,
+    23,
+    24,
+    19
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.06,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz80r5w18",
+   "family": "ghz",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 4,
+   "widths": [
+    18,
+    18,
+    12,
+    18,
+    18
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate20r2w12",
+   "family": "graphstate",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    11,
+    11
+   ],
+   "configs": [
+    16,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate30r3w12",
+   "family": "graphstate",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 3,
+   "widths": [
+    9,
+    12,
+    12
+   ],
+   "configs": [
+    12,
+    16,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate40r2w24",
+   "family": "graphstate",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    21,
+    21
+   ],
+   "configs": [
+    9,
+    16
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate40r3w16",
+   "family": "graphstate",
+   "n": 40,
+   "r": 3,
+   "W": 16,
+   "c": 2,
+   "widths": [
+    15,
+    13,
+    14
+   ],
+   "configs": [
+    9,
+    1,
+    16
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate40r4w12",
+   "family": "graphstate",
+   "n": 40,
+   "r": 4,
+   "W": 12,
+   "c": 4,
+   "widths": [
+    11,
+    11,
+    11,
+    11
+   ],
+   "configs": [
+    9,
+    16,
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate60r3w24",
+   "family": "graphstate",
+   "n": 60,
+   "r": 3,
+   "W": 24,
+   "c": 3,
+   "widths": [
+    24,
+    20,
+    19
+   ],
+   "configs": [
+    12,
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.09,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate60r4w18",
+   "family": "graphstate",
+   "n": 60,
+   "r": 4,
+   "W": 18,
+   "c": 3,
+   "widths": [
+    17,
+    18,
+    11,
+    17
+   ],
+   "configs": [
+    12,
+    1,
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate80r4w24",
+   "family": "graphstate",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 4,
+   "widths": [
+    24,
+    17,
+    22,
+    21
+   ],
+   "configs": [
+    16,
+    12,
+    9,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.13,
+   "stratum": "narrow"
+  },
+  {
+   "id": "graphstate80r5w18",
+   "family": "graphstate",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 10,
+   "widths": [
+    18,
+    18,
+    18,
+    18,
+    18
+   ],
+   "configs": [
+    972,
+    192,
+    144,
+    12,
+    192
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.11,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn20r2w12",
+   "family": "qnn",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 1,
+   "widths": [
+    11,
+    10
+   ],
+   "configs": [
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn30r2w18",
+   "family": "qnn",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 1,
+   "widths": [
+    14,
+    17
+   ],
+   "configs": [
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn30r3w12",
+   "family": "qnn",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    10,
+    12,
+    10
+   ],
+   "configs": [
+    12,
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn40r2w24",
+   "family": "qnn",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 1,
+   "widths": [
+    22,
+    19
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn40r3w16",
+   "family": "qnn",
+   "n": 40,
+   "r": 3,
+   "W": 16,
+   "c": 2,
+   "widths": [
+    15,
+    13,
+    14
+   ],
+   "configs": [
+    4,
+    12,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn40r4w12",
+   "family": "qnn",
+   "n": 40,
+   "r": 4,
+   "W": 12,
+   "c": 3,
+   "widths": [
+    10,
+    10,
+    12,
+    11
+   ],
+   "configs": [
+    12,
+    12,
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn60r3w24",
+   "family": "qnn",
+   "n": 60,
+   "r": 3,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    23,
+    21,
+    18
+   ],
+   "configs": [
+    4,
+    12,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.02,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn60r4w18",
+   "family": "qnn",
+   "n": 60,
+   "r": 4,
+   "W": 18,
+   "c": 3,
+   "widths": [
+    17,
+    16,
+    17,
+    13
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn80r4w24",
+   "family": "qnn",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 3,
+   "widths": [
+    17,
+    23,
+    24,
+    19
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.05,
+   "stratum": "narrow"
+  },
+  {
+   "id": "qnn80r5w18",
+   "family": "qnn",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 4,
+   "widths": [
+    18,
+    18,
+    12,
+    18,
+    18
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "vqe_real_amp20r2w12",
+   "family": "vqe_real_amp",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 3,
+   "widths": [
+    11,
+    12
+   ],
+   "configs": [
+    64,
+    27
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "vqe_real_amp30r2w18",
+   "family": "vqe_real_amp",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 3,
+   "widths": [
+    17,
+    16
+   ],
+   "configs": [
+    64,
+    27
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "vqe_real_amp40r2w24",
+   "family": "vqe_real_amp",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 3,
+   "widths": [
+    21,
+    22
+   ],
+   "configs": [
+    27,
+    64
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.06,
+   "stratum": "narrow"
+  },
+  {
+   "id": "vqe_su220r2w12",
+   "family": "vqe_su2",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 3,
+   "widths": [
+    11,
+    12
+   ],
+   "configs": [
+    64,
+    27
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "vqe_su230r2w18",
+   "family": "vqe_su2",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 3,
+   "widths": [
+    17,
+    16
+   ],
+   "configs": [
+    64,
+    27
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "vqe_su240r2w24",
+   "family": "vqe_su2",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 3,
+   "widths": [
+    21,
+    22
+   ],
+   "configs": [
+    27,
+    64
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.05,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate20r2w12",
+   "family": "wstate",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    10,
+    12
+   ],
+   "configs": [
+    16,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate30r2w18",
+   "family": "wstate",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 2,
+   "widths": [
+    17,
+    15
+   ],
+   "configs": [
+    16,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate30r3w12",
+   "family": "wstate",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 4,
+   "widths": [
+    12,
+    10,
+    12
+   ],
+   "configs": [
+    16,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate40r2w24",
+   "family": "wstate",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    20,
+    22
+   ],
+   "configs": [
+    16,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate40r3w16",
+   "family": "wstate",
+   "n": 40,
+   "r": 3,
+   "W": 16,
+   "c": 4,
+   "widths": [
+    16,
+    15,
+    13
+   ],
+   "configs": [
+    16,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate40r4w12",
+   "family": "wstate",
+   "n": 40,
+   "r": 4,
+   "W": 12,
+   "c": 6,
+   "widths": [
+    12,
+    12,
+    12,
+    10
+   ],
+   "configs": [
+    16,
+    144,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate60r3w24",
+   "family": "wstate",
+   "n": 60,
+   "r": 3,
+   "W": 24,
+   "c": 4,
+   "widths": [
+    23,
+    19,
+    22
+   ],
+   "configs": [
+    16,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.11,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate60r4w18",
+   "family": "wstate",
+   "n": 60,
+   "r": 4,
+   "W": 18,
+   "c": 6,
+   "widths": [
+    16,
+    17,
+    17,
+    16
+   ],
+   "configs": [
+    16,
+    144,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate80r4w24",
+   "family": "wstate",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 6,
+   "widths": [
+    22,
+    22,
+    21,
+    21
+   ],
+   "configs": [
+    16,
+    144,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.1,
+   "stratum": "narrow"
+  },
+  {
+   "id": "wstate80r5w18",
+   "family": "wstate",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 8,
+   "widths": [
+    18,
+    18,
+    17,
+    18,
+    17
+   ],
+   "configs": [
+    16,
+    144,
+    144,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.02,
+   "stratum": "narrow"
+  },
+  {
+   "id": "adder20r2w12",
+   "family": "adder",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    12,
+    10
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "adder30r2w18",
+   "family": "adder",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 4,
+   "widths": [
+    18,
+    16
+   ],
+   "configs": [
+    192,
+    108
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.04,
+   "stratum": "narrow"
+  },
+  {
+   "id": "adder30r3w12",
+   "family": "adder",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 4,
+   "widths": [
+    12,
+    12,
+    10
+   ],
+   "configs": [
+    12,
+    144,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "adder40r2w24",
+   "family": "adder",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    22,
+    20
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.02,
+   "stratum": "narrow"
+  },
+  {
+   "id": "adder40r3w16",
+   "family": "adder",
+   "n": 40,
+   "r": 3,
+   "W": 16,
+   "c": 4,
+   "widths": [
+    16,
+    16,
+    12
+   ],
+   "configs": [
+    12,
+    144,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "adder40r4w12",
+   "family": "adder",
+   "n": 40,
+   "r": 4,
+   "W": 12,
+   "c": 6,
+   "widths": [
+    12,
+    12,
+    12,
+    10
+   ],
+   "configs": [
+    12,
+    144,
+    144,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "adder80r5w18",
+   "family": "adder",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 8,
+   "widths": [
+    18,
+    18,
+    18,
+    18,
+    16
+   ],
+   "configs": [
+    12,
+    144,
+    144,
+    144,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.04,
+   "stratum": "narrow"
+  },
+  {
+   "id": "supremacy_d420r2w12",
+   "family": "supremacy_d4",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 1,
+   "widths": [
+    11,
+    10
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "supremacy_d430r2w18",
+   "family": "supremacy_d4",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 1,
+   "widths": [
+    14,
+    17
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "supremacy_d430r3w12",
+   "family": "supremacy_d4",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 1,
+   "widths": [
+    10,
+    12,
+    9
+   ],
+   "configs": [
+    4,
+    3,
+    1
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "supremacy_d480r4w24",
+   "family": "supremacy_d4",
+   "n": 80,
+   "r": 4,
+   "W": 24,
+   "c": 5,
+   "widths": [
+    22,
+    21,
+    21,
+    21
+   ],
+   "configs": [
+    48,
+    16,
+    36,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.1,
+   "stratum": "narrow"
+  },
+  {
+   "id": "supremacy_d480r5w18",
+   "family": "supremacy_d4",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 8,
+   "widths": [
+    18,
+    17,
+    17,
+    18,
+    18
+   ],
+   "configs": [
+    48,
+    12,
+    64,
+    972,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.1,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea20r2w12",
+   "family": "hwea",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 1,
+   "widths": [
+    11,
+    10
+   ],
+   "configs": [
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea30r2w18",
+   "family": "hwea",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 1,
+   "widths": [
+    16,
+    15
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea30r3w12",
+   "family": "hwea",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    11,
+    11,
+    10
+   ],
+   "configs": [
+    4,
+    12,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea40r2w24",
+   "family": "hwea",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 1,
+   "widths": [
+    23,
+    18
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea40r3w16",
+   "family": "hwea",
+   "n": 40,
+   "r": 3,
+   "W": 16,
+   "c": 2,
+   "widths": [
+    15,
+    15,
+    12
+   ],
+   "configs": [
+    4,
+    3,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea40r4w12",
+   "family": "hwea",
+   "n": 40,
+   "r": 4,
+   "W": 12,
+   "c": 3,
+   "widths": [
+    12,
+    12,
+    10,
+    9
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea60r4w18",
+   "family": "hwea",
+   "n": 60,
+   "r": 4,
+   "W": 18,
+   "c": 3,
+   "widths": [
+    17,
+    16,
+    16,
+    14
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hwea80r5w18",
+   "family": "hwea",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 4,
+   "widths": [
+    18,
+    18,
+    12,
+    18,
+    18
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv20r2w12",
+   "family": "bv",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 1,
+   "widths": [
+    11,
+    10
+   ],
+   "configs": [
+    4,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv30r2w18",
+   "family": "bv",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 1,
+   "widths": [
+    16,
+    15
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv30r3w12",
+   "family": "bv",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    11,
+    11,
+    10
+   ],
+   "configs": [
+    4,
+    12,
+    3
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv40r2w24",
+   "family": "bv",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 1,
+   "widths": [
+    23,
+    18
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv40r3w16",
+   "family": "bv",
+   "n": 40,
+   "r": 3,
+   "W": 16,
+   "c": 2,
+   "widths": [
+    15,
+    15,
+    12
+   ],
+   "configs": [
+    4,
+    3,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv40r4w12",
+   "family": "bv",
+   "n": 40,
+   "r": 4,
+   "W": 12,
+   "c": 3,
+   "widths": [
+    12,
+    12,
+    10,
+    9
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv60r4w18",
+   "family": "bv",
+   "n": 60,
+   "r": 4,
+   "W": 18,
+   "c": 3,
+   "widths": [
+    17,
+    16,
+    16,
+    14
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "bv80r5w18",
+   "family": "bv",
+   "n": 80,
+   "r": 5,
+   "W": 18,
+   "c": 4,
+   "widths": [
+    18,
+    18,
+    12,
+    18,
+    18
+   ],
+   "configs": [
+    3,
+    12,
+    12,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "aqft30r2w18",
+   "family": "aqft",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 5,
+   "widths": [
+    18,
+    17
+   ],
+   "configs": [
+    1024,
+    243
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.1,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hetero40r2w24",
+   "family": "hetero",
+   "n": 40,
+   "r": 2,
+   "W": 24,
+   "c": 2,
+   "widths": [
+    21,
+    21
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "ghz60r2w34",
+   "family": "ghz",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 1,
+   "widths": [
+    30,
+    31
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "wide"
+  },
+  {
+   "id": "ghz80r3w30",
+   "family": "ghz",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 2,
+   "widths": [
+    30,
+    25,
+    27
+   ],
+   "configs": [
+    3,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.02,
+   "stratum": "wide"
+  },
+  {
+   "id": "graphstate60r2w34",
+   "family": "graphstate",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 2,
+   "widths": [
+    29,
+    33
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.07,
+   "stratum": "wide"
+  },
+  {
+   "id": "graphstate80r3w30",
+   "family": "graphstate",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 3,
+   "widths": [
+    29,
+    29,
+    25
+   ],
+   "configs": [
+    12,
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.15,
+   "stratum": "wide"
+  },
+  {
+   "id": "qnn60r2w34",
+   "family": "qnn",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 1,
+   "widths": [
+    30,
+    31
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "wide"
+  },
+  {
+   "id": "qnn80r3w30",
+   "family": "qnn",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 2,
+   "widths": [
+    30,
+    25,
+    27
+   ],
+   "configs": [
+    3,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.03,
+   "stratum": "wide"
+  },
+  {
+   "id": "vqe_real_amp60r2w34",
+   "family": "vqe_real_amp",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 3,
+   "widths": [
+    31,
+    32
+   ],
+   "configs": [
+    27,
+    64
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.21,
+   "stratum": "wide"
+  },
+  {
+   "id": "vqe_su260r2w34",
+   "family": "vqe_su2",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 3,
+   "widths": [
+    31,
+    32
+   ],
+   "configs": [
+    27,
+    64
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.21,
+   "stratum": "wide"
+  },
+  {
+   "id": "wstate60r2w34",
+   "family": "wstate",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 2,
+   "widths": [
+    30,
+    32
+   ],
+   "configs": [
+    16,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.04,
+   "stratum": "wide"
+  },
+  {
+   "id": "wstate80r3w30",
+   "family": "wstate",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 4,
+   "widths": [
+    29,
+    30,
+    25
+   ],
+   "configs": [
+    16,
+    144,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.25,
+   "stratum": "wide"
+  },
+  {
+   "id": "adder80r3w30",
+   "family": "adder",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 4,
+   "widths": [
+    30,
+    28,
+    26
+   ],
+   "configs": [
+    12,
+    144,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.27,
+   "stratum": "wide"
+  },
+  {
+   "id": "supremacy_d480r3w30",
+   "family": "supremacy_d4",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 4,
+   "widths": [
+    28,
+    27,
+    29
+   ],
+   "configs": [
+    36,
+    16,
+    36
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.17,
+   "stratum": "wide"
+  },
+  {
+   "id": "hwea60r2w34",
+   "family": "hwea",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 1,
+   "widths": [
+    30,
+    31
+   ],
+   "configs": [
+    3,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "wide"
+  },
+  {
+   "id": "hwea80r3w30",
+   "family": "hwea",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 2,
+   "widths": [
+    30,
+    24,
+    28
+   ],
+   "configs": [
+    3,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.03,
+   "stratum": "wide"
+  },
+  {
+   "id": "bv80r3w30",
+   "family": "bv",
+   "n": 80,
+   "r": 3,
+   "W": 30,
+   "c": 2,
+   "widths": [
+    30,
+    24,
+    28
+   ],
+   "configs": [
+    3,
+    12,
+    4
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "wide"
+  },
+  {
+   "id": "hetero20r2w12",
+   "family": "hetero",
+   "n": 20,
+   "r": 2,
+   "W": 12,
+   "c": 2,
+   "widths": [
+    12,
+    10
+   ],
+   "configs": [
+    9,
+    16
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hetero30r2w18",
+   "family": "hetero",
+   "n": 30,
+   "r": 2,
+   "W": 18,
+   "c": 2,
+   "widths": [
+    16,
+    16
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.0,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hetero30r3w12",
+   "family": "hetero",
+   "n": 30,
+   "r": 3,
+   "W": 12,
+   "c": 4,
+   "widths": [
+    12,
+    10,
+    12
+   ],
+   "configs": [
+    12,
+    192,
+    9
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "narrow"
+  },
+  {
+   "id": "hetero60r2w34",
+   "family": "hetero",
+   "n": 60,
+   "r": 2,
+   "W": 34,
+   "c": 2,
+   "widths": [
+    31,
+    31
+   ],
+   "configs": [
+    12,
+    12
+   ],
+   "noise": [
+    "ideal",
+    "noisy"
+   ],
+   "budgets": [
+    1000,
+    10000,
+    100000
+   ],
+   "est_unit_hours_S1e5": 0.01,
+   "stratum": "wide"
+  }
+ ],
+ "excluded": [
+  {
+   "id": "graphstate30r2w18",
+   "reason": "no cut (c = 0)"
+  },
+  {
+   "id": "qaoa20r2w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa30r2w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa30r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa40r2w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa40r3w16",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa40r4w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa60r3w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa60r4w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa80r4w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa80r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft20r2w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft30r2w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft30r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft40r2w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft40r3w16",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft40r4w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft60r3w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft60r4w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft80r4w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft80r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "randomcircuit20r2w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "randomcircuit30r2w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "randomcircuit30r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "randomcircuit40r2w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "randomcircuit40r3w16",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "randomcircuit40r4w12",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "randomcircuit60r3w24",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "randomcircuit60r4w18",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "randomcircuit80r4w24",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "randomcircuit80r5w18",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "vqe_real_amp30r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_real_amp40r3w16",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "vqe_real_amp40r4w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_real_amp60r3w24",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "vqe_real_amp60r4w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_real_amp80r4w24",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "vqe_real_amp80r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_su230r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_su240r3w16",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "vqe_su240r4w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_su260r3w24",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "vqe_su260r4w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_su280r4w24",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "vqe_su280r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "adder60r3w24",
+   "reason": "identical to E1 development instance"
+  },
+  {
+   "id": "adder60r4w18",
+   "reason": "EXCLUDED configs 1296"
+  },
+  {
+   "id": "adder80r4w24",
+   "reason": "identical to E2 development instance"
+  },
+  {
+   "id": "supremacy_d440r2w24",
+   "reason": "ERROR ValueError('n not a near-square grid')"
+  },
+  {
+   "id": "supremacy_d440r3w16",
+   "reason": "ERROR ValueError('n not a near-square grid')"
+  },
+  {
+   "id": "supremacy_d440r4w12",
+   "reason": "ERROR ValueError('n not a near-square grid')"
+  },
+  {
+   "id": "supremacy_d460r3w24",
+   "reason": "ERROR ValueError('n not a near-square grid')"
+  },
+  {
+   "id": "supremacy_d460r4w18",
+   "reason": "ERROR ValueError('n not a near-square grid')"
+  },
+  {
+   "id": "supremacy20r2w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "supremacy30r2w18",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "supremacy30r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "supremacy40r2w24",
+   "reason": "ERROR ValueError('generator returned no circuit at this width')"
+  },
+  {
+   "id": "supremacy40r3w16",
+   "reason": "ERROR ValueError('generator returned no circuit at this width')"
+  },
+  {
+   "id": "supremacy40r4w12",
+   "reason": "ERROR ValueError('generator returned no circuit at this width')"
+  },
+  {
+   "id": "supremacy60r3w24",
+   "reason": "ERROR ValueError('generator returned no circuit at this width')"
+  },
+  {
+   "id": "supremacy60r4w18",
+   "reason": "ERROR ValueError('generator returned no circuit at this width')"
+  },
+  {
+   "id": "supremacy80r4w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "supremacy80r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "hwea60r3w24",
+   "reason": "identical to E1 development instance"
+  },
+  {
+   "id": "hwea80r4w24",
+   "reason": "identical to E2 development instance"
+  },
+  {
+   "id": "bv60r3w24",
+   "reason": "identical to E1 development instance"
+  },
+  {
+   "id": "bv80r4w24",
+   "reason": "identical to E2 development instance"
+  },
+  {
+   "id": "aqft20r2w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft30r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft40r2w24",
+   "reason": "EXCLUDED configs 4096"
+  },
+  {
+   "id": "aqft40r3w16",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft40r4w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft60r3w24",
+   "reason": "EXCLUDED configs 2985984"
+  },
+  {
+   "id": "aqft60r4w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft80r4w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft80r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular20r2w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular30r2w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular30r3w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular40r2w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular40r3w16",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular40r4w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular60r3w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular60r4w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular80r4w24",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular80r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "hetero40r3w16",
+   "reason": "EXCLUDED configs 2304"
+  },
+  {
+   "id": "hetero40r4w12",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "hetero60r3w24",
+   "reason": "EXCLUDED configs 6912"
+  },
+  {
+   "id": "hetero60r4w18",
+   "reason": "EXCLUDED configs 15552"
+  },
+  {
+   "id": "hetero80r4w24",
+   "reason": "EXCLUDED configs 248832"
+  },
+  {
+   "id": "hetero80r5w18",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "ghz80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "graphstate80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa60r2w34",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qaoa80r3w30",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft60r2w34",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qft80r3w30",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "qnn80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "randomcircuit60r2w34",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "randomcircuit80r2w40",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "randomcircuit80r3w30",
+   "reason": "ERROR OverflowError('integer division result too large for a float')"
+  },
+  {
+   "id": "vqe_real_amp80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_real_amp80r3w30",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "vqe_su280r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "vqe_su280r3w30",
+   "reason": "EXCLUDED configs 1728"
+  },
+  {
+   "id": "wstate80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "adder60r2w34",
+   "reason": "identical to E1 development instance"
+  },
+  {
+   "id": "adder80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "supremacy_d460r2w34",
+   "reason": "ERROR ValueError('n not a near-square grid')"
+  },
+  {
+   "id": "supremacy_d480r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "supremacy60r2w34",
+   "reason": "ERROR ValueError('generator returned no circuit at this width')"
+  },
+  {
+   "id": "supremacy80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "supremacy80r3w30",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "hwea80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "bv60r2w34",
+   "reason": "identical to E1 development instance"
+  },
+  {
+   "id": "bv80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft60r2w34",
+   "reason": "EXCLUDED configs 4096"
+  },
+  {
+   "id": "aqft80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "aqft80r3w30",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular60r2w34",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "regular80r3w30",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "hetero80r2w40",
+   "reason": "NO SCHEME"
+  },
+  {
+   "id": "hetero80r3w30",
+   "reason": "EXCLUDED configs 36864"
+  }
+ ]
+}

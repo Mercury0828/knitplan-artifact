@@ -1,0 +1,29 @@
+{
+ "instance": "qaoa20a",
+ "S": 10000,
+ "qcut_version": "2.4.0",
+ "native": {
+  "num_circuits": 1024,
+  "t_cut": 2.7953709999856073,
+  "t_experiment_build": 1.1656074000056833,
+  "t_aer_run": 7.914852799993241,
+  "t_reconstruct": 23.46292849999736,
+  "t_marginal10_build": 0.024282500002300367,
+  "t_marginal10_values": 0.009858699981123209,
+  "t_point_batch_1000": 0.014918500004569069,
+  "t_top10": 0.49578219998511486,
+  "t_full_2^n": 6.7455004999937955,
+  "sum_full": 1.000000000000006,
+  "min_full": -5.797820272445671e-06,
+  "separable": "NoneType"
+ },
+ "equal_semantics": {
+  "t_adapter_build": 0.1958691000181716,
+  "t_marginal10_qcut": 0.002967299980809912,
+  "t_marginal10_knitplan_dense_pushdown": 0.08860700001241639,
+  "marginal_max_abs_diff": 4.7704895589362195e-18,
+  "tau_eq": 1.888795895e-12,
+  "t_point_batch_1000_qcut": 0.01414199999999255,
+  "groups": 64
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "date": "2026-11-07",
+ "part_a": {
+  "instances": 10000,
+  "circuits_tried": 883,
+  "plan_checks_failed": 0,
+  "worst_diff_over_tau": 0.000985638338623185,
+  "seconds": 2537.0
+ },
+ "part_b": [
+  {
+   "id": "sup20a",
+   "S": 10000,
+   "worst_rel_L1": 2.713285436784238e-15,
+   "pass": true,
+   "seconds": 57.3
+  },
+  {
+   "id": "sup20b",
+   "S": 10000,
+   "worst_rel_L1": 5.595612464329335e-16,
+   "pass": true,
+   "seconds": 15.3
+  },
+  {
+   "id": "sup30",
+   "status": "SKIPPED (CutQC dense entries do not fit)"
+  },
+  {
+   "id": "aqft20",
+   "S": 10000,
+   "worst_rel_L1": 4.966100859986053e-16,
+   "pass": true,
+   "seconds": 33.3
+  },
+  {
+   "id": "aqft30",
+   "status": "SKIPPED (CutQC dense entries do not fit)"
+  },
+  {
+   "id": "qaoa20a",
+   "S": 10000,
+   "worst_rel_L1": 4.64149434797281e-16,
+   "pass": true,
+   "seconds": 1.6
+  },
+  {
+   "id": "qaoa20b",
+   "S": 10000,
+   "worst_rel_L1": 6.023961465575246e-16,
+   "pass": true,
+   "seconds": 25.9
+  },
+  {
+   "id": "adder20",
+   "S": 10000,
+   "worst_rel_L1": 1.1102230246251679e-14,
+   "pass": true,
+   "seconds": 0.2
+  },
+  {
+   "id": "adder30",
+   "S": 10000,
+   "worst_rel_L1": 1.3877787807814444e-14,
+   "pass": true,
+   "seconds": 12.2
+  },
+  {
+   "id": "adder20r3",
+   "S": 10000,
+   "worst_rel_L1": 2.2383528722281642e-14,
+   "pass": true,
+   "seconds": 0.5
+  },
+  {
+   "id": "adder30r3",
+   "S": 10000,
+   "worst_rel_L1": 6.167905692361899e-14,
+   "pass": true,
+   "seconds": 2.5
+  },
+  {
+   "id": "bv20",
+   "S": 10000,
+   "worst_rel_L1": 1.2909570053780812e-14,
+   "pass": true,
+   "seconds": 0.0
+  },
+  {
+   "id": "bv20r3",
+   "S": 10000,
+   "worst_rel_L1": 2.6020852139651813e-14,
+   "pass": true,
+   "seconds": 0.0
+  }
+ ],
+ "part_c": [
+  {
+   "id": "sup20a",
+   "S": 10000,
+   "plans": 8,
+   "max_abs_diff": 8.131516293641283e-20,
+   "tau_eq": 2.7473714035000007e-11,
+   "W": 27.473714035000008,
+   "pass": true
+  },
+  {
+   "id": "sup20b",
+   "S": 10000,
+   "plans": 8,
+   "max_abs_diff": 7.453889935837843e-20,
+   "tau_eq": 2.4260324765000003e-11,
+   "W": 24.260324765000004,
+   "pass": true
+  },
+  {
+   "id": "aqft20",
+   "S": 10000,
+   "plans": 8,
+   "max_abs_diff": 5.421010862427522e-20,
+   "tau_eq": 6.636480377875003e-11,
+   "W": 66.36480377875003,
+   "pass": true
+  },
+  {
+   "id": "qaoa20a",
+   "S": 10000,
+   "plans": 8,
+   "max_abs_diff": 1.6940658945086007e-20,
+   "tau_eq": 9.427091815e-12,
+   "W": 9.427091814999999,
+   "pass": true
+  },
+  {
+   "id": "qaoa20b",
+   "S": 10000,
+   "plans": 8,
+   "max_abs_diff": 1.5585406229479126e-19,
+   "tau_eq": 7.519680619750002e-11,
+   "W": 75.19680619750002,
+   "pass": true
+  },
+  {
+   "id": "adder20",
+   "S": 10000,
+   "plans": 8,
+   "max_abs_diff": 7.871307772244762e-17,
+   "tau_eq": 4.0143416800000004e-12,
+   "W": 4.01434168,
+   "pass": true
+  },
+  {
+   "id": "adder20r3",
+   "S": 10000,
+   "plans": 48,
+   "max_abs_diff": 1.4432899320127035e-15,
+   "tau_eq": 1.6006907008054e-11,
+   "W": 16.006907008054,
+   "pass": true
+  },
+  {
+   "id": "bv20",
+   "S": 10000,
+   "plans": 8,
+   "max_abs_diff": 5.551115123125783e-17,
+   "tau_eq": 1.99125296e-12,
+   "W": 1.9912529600000002,
+   "pass": true
+  },
+  {
+   "id": "bv20r3",
+   "S": 10000,
+   "plans": 48,
+   "max_abs_diff": 4.440892098500626e-16,
+   "tau_eq": 4.027592511664e-12,
+   "W": 4.027592511664,
+   "pass": true
+  }
+ ]
+}
