@@ -73,11 +73,11 @@ def main():
     (ROOT / "derisk/results/M1").mkdir(parents=True, exist_ok=True)
     (ROOT / "derisk/results/M1/pilot_summary.json").write_text(json.dumps({**out, "rows": rows}, indent=1))
     lines = [r"\begin{table}[t]",
-             r"\caption{End-to-end comparison (noisy cells, $S=10^4$): geometric mean "
-             r"of the strongest external system's time over KNITPLAN's, share of units where KNITPLAN is faster, and the "
-             r"system most often strongest.}\label{tab:pilot}",
+             r"\caption{Warm-query comparison (noisy cells, $S=10^4$): geometric mean "
+             r"of the fastest completing external system's time over KNITPLAN's, share of units where KNITPLAN is "
+             r"faster, and the system most often fastest (``Fastest'').}\label{tab:pilot}",
              r"\centering\small", r"\begin{tabular}{@{}llrrrl@{}}", r"\toprule",
-             r"Set & Query & Units & gmean & K faster & Most often fastest\\", r"\midrule"]
+             r"Set & Query & Units & gmean & K faster & Fastest\\", r"\midrule"]
     last = None
     for t in tab:
         g = t["group"] if t["group"] != last else ""
