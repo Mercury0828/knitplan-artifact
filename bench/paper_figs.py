@@ -90,8 +90,8 @@ def fig_rules():
     """Q3: CDF over the 154 E1 cells of each strategy's time over the per-cell best plan (DNF counted at the cap)."""
     series = [("dense, CutQC order", lambda d: d["heuristics"]["b_dense_cutqc_order"]["total"], "-", None),
               ("sparse, CutQC order", lambda d: d["heuristics"]["c_sparse_cutqc_order"]["total"], (0, (5, 2)), None),
-              ("default rule", lambda d: d["heuristics"]["a_default_rule"]["total"], (0, (6, 2, 1, 2)), None),
-              ("after-merge default", lambda d: d["heuristics"]["d_pushdown_after_merge"]["total"], (0, (1, 1.5)), None),
+              ("support-based rule", lambda d: d["heuristics"]["a_default_rule"]["total"], (0, (6, 2, 1, 2)), None),
+              ("after-merge support rule", lambda d: d["heuristics"]["d_pushdown_after_merge"]["total"], (0, (1, 1.5)), None),
               ("exhaustive planner", lambda d: d["planners"]["v1"]["total"], (0, (6, 1.5, 1, 1.5, 1, 1.5)), None),
               ("its plans, execution only",
                lambda d: d["planners"]["v1"]["total"] - d["planners"]["v1"]["planning"], "-", "o")]

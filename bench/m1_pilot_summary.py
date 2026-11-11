@@ -77,7 +77,7 @@ def main():
              r"of the strongest external system's time over KNITPLAN's, share of units where KNITPLAN is faster, and the "
              r"system most often strongest.}\label{tab:pilot}",
              r"\centering\small", r"\begin{tabular}{@{}llrrrl@{}}", r"\toprule",
-             r"Instances & Query & Units & gmean & K faster & Strongest\\", r"\midrule"]
+             r"Set & Query & Units & gmean & K faster & Most often fastest\\", r"\midrule"]
     last = None
     for t in tab:
         g = t["group"] if t["group"] != last else ""

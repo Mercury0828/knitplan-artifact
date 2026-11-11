@@ -1,6 +1,6 @@
 {
  "date": "2026-11-07",
- "tau": "certified (T0 R1)",
+ "tau": "certified",
  "part_a": {
   "instances": 10000,
   "circuits_tried": 883,
